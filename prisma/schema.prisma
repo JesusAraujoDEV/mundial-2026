@@ -59,7 +59,7 @@ model Jugador {
 
 model Grupo {
   id              Int    @id @default(autoincrement())
-  nombre          String @unique @db.VarChar(5) // A, B, C, ... L
+  nombre          String @db.VarChar(5) // A, B, C, ... L
   paisId          Int    @map("pais_id")
   puntos          Int    @default(0)
   partidosJugados Int    @default(0) @map("partidos_jugados")
