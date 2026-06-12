@@ -1,0 +1,161 @@
+{
+  "pais": "Uzbekistán",
+  "jugadores": [
+    {
+      "dorsal": 12,
+      "nombre": "Abduvokhid Nematov",
+      "posicion": "Portero",
+      "edad": 25
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Utkir Yusupov",
+      "posicion": "Portero",
+      "edad": 35
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Botirali Ergashev",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Abdukodir Khusanov",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Rustam Ashurmatov",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Jakhongir Urozov",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Avazbek Ulmasaliev",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Umar Eshmurodov",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Sherzod Nasrullaev",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Farrukh Sayfiev",
+      "posicion": "Defensa",
+      "edad": 35
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Khozhiakbar Alizhonov",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Bekhruz Karimov",
+      "posicion": "Defensa",
+      "edad": 18
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Odildzhon Khamrobekov",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Abdulla Abdullaev",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Aziz Ganiev",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Otabek Shukurov",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Akmal Mozgovoy",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Sherzod Esanov",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Jamshid Iskanderov",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Oston Urunov",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Jaloliddin Masharipov",
+      "posicion": "Delantero",
+      "edad": 32
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Abbosbek Fayzullaev",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Dostonbek Khamdamov",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Eldor Shomurodov",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Igor Sergeev",
+      "posicion": "Delantero",
+      "edad": 33
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Azizbek Amanov",
+      "posicion": "Delantero",
+      "edad": 28
+    }
+  ]
+}

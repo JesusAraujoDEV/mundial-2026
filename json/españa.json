@@ -1,0 +1,161 @@
+{
+  "pais": "España",
+  "jugadores": [
+    {
+      "dorsal": 13,
+      "nombre": "Joan García",
+      "posicion": "Portero",
+      "edad": 25
+    },
+    {
+      "dorsal": 1,
+      "nombre": "David Raya",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Unai Simón",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Pau Cubarsí",
+      "posicion": "Defensa",
+      "edad": 19
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Eric García",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Marc Pubill",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Aymeric Laporte",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Marc Cucurella",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Alejandro Grimaldo",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Pedro Porro",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Marcos Llorente",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Martín Zubimendi",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Rodri",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Pedri",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Fabián Ruiz",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Gavi",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Mikel Merino",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Dani Olmo",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Álex Baena",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Nico Williams",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Víctor Muñoz",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Lamine Yamal",
+      "posicion": "Delantero",
+      "edad": 18
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Yéremy Pino",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Ferran Torres",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Mikel Oyarzabal",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Borja Iglesias",
+      "posicion": "Delantero",
+      "edad": 33
+    }
+  ]
+}

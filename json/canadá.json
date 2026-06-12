@@ -1,0 +1,161 @@
+{
+  "pais": "Canadá",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Dayne St. Clair",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Maxime Crépeau",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Owen Goodman",
+      "posicion": "Portero",
+      "edad": 22
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Moïse Bombito",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Alfie Jones",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Derek Cornelius",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Joel Waterman",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Luc De Fougerolles",
+      "posicion": "Defensa",
+      "edad": 20
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Alphonso Davies",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Alistair Johnston",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Richie Laryea",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Niko Sigur",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Ismaël Koné",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Nathan-Dylan Saliba",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Stephen Eustaquio",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Jonathan Osorio",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Mathieu Choinière",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Ali Ahmed",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Liam Millar",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Jacob Shaffelburg",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Jayden Nelson",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Tajon Buchanan",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Jonathan David",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Promise David",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Tani Oluwaseyi",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Cyle Larin",
+      "posicion": "Delantero",
+      "edad": 31
+    }
+  ]
+}

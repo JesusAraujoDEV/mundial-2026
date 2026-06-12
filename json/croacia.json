@@ -1,0 +1,161 @@
+{
+  "pais": "Croacia",
+  "jugadores": [
+    {
+      "dorsal": 23,
+      "nombre": "Dominik Kotarski",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Ivor Pandur",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Dominik Livakovic",
+      "posicion": "Portero",
+      "edad": 31
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Josko Gvardiol",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Luka Vuskovic",
+      "posicion": "Defensa",
+      "edad": 19
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Josip Sutalo",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Marin Pongracic",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Martin Erlić",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Duje Caleta-Car",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Josip Stanisic",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Nikola Moro",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Kristijan Jakic",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Petar Sučić",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Mateo Kovacic",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Luka Sucic",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Mario Pašalić",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Luka Modrić",
+      "posicion": "Mediocentro",
+      "edad": 40
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Martin Baturina",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Nikola Vlašić",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Toni Fruk",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Andrej Kramaric",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Ivan Perišić",
+      "posicion": "Delantero",
+      "edad": 37
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Marco Pašalić",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Igor Matanovic",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Petar Musa",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Ante Budimir",
+      "posicion": "Delantero",
+      "edad": 34
+    }
+  ]
+}

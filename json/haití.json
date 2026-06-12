@@ -1,0 +1,161 @@
+{
+  "pais": "Haití",
+  "jugadores": [
+    {
+      "dorsal": 12,
+      "nombre": "Alexandre Pierre",
+      "posicion": "Portero",
+      "edad": 25
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Johny Placide",
+      "posicion": "Portero",
+      "edad": 38
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Josué Duverger",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Hannes Delcroix",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Jean-Kévin Duverne",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Ricardo Adé",
+      "posicion": "Defensa",
+      "edad": 36
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Keeto Thermoncy",
+      "posicion": "Defensa",
+      "edad": 20
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Martin Expérience",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Duke Lacroix",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Carlens Arcus",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Wilguens Paugain",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Danley Jean Jacques",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Leverton Pierre",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Dominique Simon",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Carl Sainté",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Woodensky Pierre",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Jean-Ricner Bellegarde",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Derrick Etienne Jr.",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Ruben Providence",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Josué Casimir",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Louicius Deedson",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Wilson Isidor",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Lenny Joseph",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Frantzdy Pierrot",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Duckens Nazon",
+      "posicion": "Delantero",
+      "edad": 32
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Yassin Fortuné",
+      "posicion": "Delantero",
+      "edad": 27
+    }
+  ]
+}

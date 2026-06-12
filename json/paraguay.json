@@ -1,0 +1,161 @@
+{
+  "pais": "Paraguay",
+  "jugadores": [
+    {
+      "dorsal": 12,
+      "nombre": "Orlando Gill",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Gastón Olveira",
+      "posicion": "Portero",
+      "edad": 33
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Roberto Fernández",
+      "posicion": "Portero",
+      "edad": 38
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Omar Alderete",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Gustavo Gómez",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 13,
+      "nombre": "José Canale",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Júnior Alonso",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Fabián Balbuena",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Gustavo Velázquez",
+      "posicion": "Defensa",
+      "edad": 35
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Alexandro Maidana",
+      "posicion": "Defensa",
+      "edad": 20
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Juan José Cáceres",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Andrés Cubas",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Braian Ojeda",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Diego Gómez",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Damián Bobadilla",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Matías Galarza",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Julio Enciso",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Mauricio",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Kaku",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Gustavo Caballero",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Miguel Almirón",
+      "posicion": "Delantero",
+      "edad": 32
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Ramón Sosa",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Isidro Pitta",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Álex Arce",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Antonio Sanabria",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Gabriel Ávalos",
+      "posicion": "Delantero",
+      "edad": 35
+    }
+  ]
+}

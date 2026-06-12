@@ -1,0 +1,161 @@
+{
+  "pais": "Uruguay",
+  "jugadores": [
+    {
+      "dorsal": 12,
+      "nombre": "Santiago Mele",
+      "posicion": "Portero",
+      "edad": 28
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Sergio Rochet",
+      "posicion": "Portero",
+      "edad": 33
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Fernando Muslera",
+      "posicion": "Portero",
+      "edad": 39
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Ronald Araujo",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Santiago Bueno",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 2,
+      "nombre": "José María Giménez",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Sebastián Cáceres",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Maxi Araújo",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Mathías Olivera",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Joaquín Piquerez",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Juan Manuel Sanabria",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Matías Viña",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Guillermo Varela",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Manuel Ugarte",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Rodrigo Bentancur",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Emiliano Martínez",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Federico Valverde",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Nicolás de la Cruz",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Rodrigo Zalazar",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Giorgian de Arrascaeta",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Agustín Canobbio",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Brian Rodríguez",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Facundo Pellistri",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Darwin Núñez",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Federico Viñas",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Rodrigo Aguirre",
+      "posicion": "Delantero",
+      "edad": 31
+    }
+  ]
+}

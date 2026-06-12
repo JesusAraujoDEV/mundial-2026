@@ -1,0 +1,161 @@
+{
+  "pais": "Estados Unidos",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Matt Turner",
+      "posicion": "Portero",
+      "edad": 31
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Chris Brady",
+      "posicion": "Portero",
+      "edad": 22
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Matt Freese",
+      "posicion": "Portero",
+      "edad": 27
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Chris Richards",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Mark McKenzie",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Auston Trusty",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Miles Robinson",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Tim Ream",
+      "posicion": "Defensa",
+      "edad": 38
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Antonee Robinson",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Sergiño Dest",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Joe Scally",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Alex Freeman",
+      "posicion": "Defensa",
+      "edad": 21
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Tyler Adams",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Weston McKennie",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Sebastian Berhalter",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Cristian Roldán",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Timothy Weah",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Malik Tillman",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Brenden Aaronson",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Giovanni Reyna",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Max Arfsten",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Christian Pulisic",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Álex Zendejas",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Folarin Balogun",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Ricardo Pepi",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Haji Wright",
+      "posicion": "Delantero",
+      "edad": 28
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "pais": "Egipto",
+  "jugadores": [
+    {
+      "dorsal": 23,
+      "nombre": "Oufa Shobeir",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Mohamed Alaa",
+      "posicion": "Portero",
+      "edad": 27
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Mohamed El Shenawy",
+      "posicion": "Portero",
+      "edad": 37
+    },
+    {
+      "dorsal": 16,
+      "nombre": "El Mahdi Soliman",
+      "posicion": "Portero",
+      "edad": 39
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Mohamed Abdelmonem",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Hossam Abdelmaguid",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Ramy Rabia",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Yasser Ibrahim",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Ahmed Fatouh",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Karim Hafez",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Mohamed Hany",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Tarek Alaa",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Marwan Ateya",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Mohanad Lasheen",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Hamdy Fathy",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Nabil Dunga",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Emam Ashour",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Mahmoud Saber",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Trezeguet",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Ibrahim Adel",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Mostafa Ziko",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Mohamed Salah",
+      "posicion": "Delantero",
+      "edad": 33
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Haissem Hassan",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Zizo",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Omar Marmoush",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Hamza Abdelkarim",
+      "posicion": "Delantero",
+      "edad": 18
+    }
+  ]
+}

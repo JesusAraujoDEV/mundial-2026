@@ -1,0 +1,161 @@
+{
+  "pais": "Colombia",
+  "jugadores": [
+    {
+      "dorsal": 24,
+      "nombre": "Álvaro Montero",
+      "posicion": "Portero",
+      "edad": 31
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Camilo Vargas",
+      "posicion": "Portero",
+      "edad": 37
+    },
+    {
+      "dorsal": 1,
+      "nombre": "David Ospina",
+      "posicion": "Portero",
+      "edad": 37
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Jhon Lucumí",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Davinson Sánchez",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Willer Ditta",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Yerry Mina",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Deiver Machado",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Johan Mojica",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Daniel Muñoz",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Santiago Arias",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Richard Ríos",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Jefferson Lerma",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Kevin Castaño",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Gustavo Puerta",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Juan Portilla",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Jorge Carrascal",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Juan Fernando Quintero",
+      "posicion": "Mediocentro",
+      "edad": 33
+    },
+    {
+      "dorsal": 10,
+      "nombre": "James Rodríguez",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Luis Díaz",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Andrés Gómez",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Jáminton Campaz",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Jhon Arias",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Luis Suárez",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Cucho Hernández",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Jhon Córdoba",
+      "posicion": "Delantero",
+      "edad": 33
+    }
+  ]
+}

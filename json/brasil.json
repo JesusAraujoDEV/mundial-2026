@@ -1,0 +1,161 @@
+{
+  "pais": "Brasil",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Alisson",
+      "posicion": "Portero",
+      "edad": 33
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Ederson",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Weverton",
+      "posicion": "Portero",
+      "edad": 38
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Gabriel",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Bremer",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Marquinhos",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Roger Ibañez",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Léo Pereira",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Danilo",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Douglas Santos",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Alex Sandro",
+      "posicion": "Defensa",
+      "edad": 35
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Fabinho",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Casemiro",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Bruno Guimarães",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Éderson",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Danilo",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Lucas Paquetá",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Neymar",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Vinicius Junior",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Matheus Cunha",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Raphinha",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Gabriel Martinelli",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Rayan",
+      "posicion": "Delantero",
+      "edad": 19
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Luiz Henrique",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Igor Thiago",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Endrick",
+      "posicion": "Delantero",
+      "edad": 19
+    }
+  ]
+}

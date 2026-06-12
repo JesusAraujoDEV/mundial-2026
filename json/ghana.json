@@ -1,0 +1,167 @@
+{
+  "pais": "Ghana",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Lawrence Ati Zigi",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Joseph Anang",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Benjamin Asare",
+      "posicion": "Portero",
+      "edad": 33
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Kojo Peprah Oppong",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Alidu Seidu",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Jonas Adjetey",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Jerome Opoku",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Abdul Mumin",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Derrick Luckassen",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Gideon Mensah",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Abdul Rahman Baba",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Marvin Senaya",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Elisha Owusu",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Thomas Partey",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Caleb Yirenkyi",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Kwasi Sibo",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Emmanuel Agyei",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Augustine Boakye",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Kamaldeen Sulemana",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Christopher Bonsu Baah",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Antoine Semenyo",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Abdul Fatawu",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Ernest Nuamah",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Iñaki Williams",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Brandon Thomas-Asante",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Prince Adu",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Jordan Ayew",
+      "posicion": "Delantero",
+      "edad": 34
+    }
+  ]
+}

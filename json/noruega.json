@@ -1,0 +1,161 @@
+{
+  "pais": "Noruega",
+  "jugadores": [
+    {
+      "dorsal": 12,
+      "nombre": "Sander Tangvik",
+      "posicion": "Portero",
+      "edad": 23
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Egil Selvik",
+      "posicion": "Portero",
+      "edad": 28
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Ørjan Nyland",
+      "posicion": "Portero",
+      "edad": 35
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Kristoffer Ajer",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Leo Østigård",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Torbjørn Heggem",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Henrik Falchener",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Sondre Langås",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 5,
+      "nombre": "David Møller Wolfe",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Fredrik Bjørkan",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Julian Ryerson",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Marcus Pedersen",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Sander Berge",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Patrick Berg",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Fredrik Aursnes",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Kristian Thorstvedt",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Morten Thorsby",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Martin Ødegaard",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Thelo Aasgaard",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Antonio Nusa",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Andreas Schjelderup",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Jens Petter Hauge",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Oscar Bobb",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Erling Haaland",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Jørgen Strand Larsen",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Alexander Sørloth",
+      "posicion": "Delantero",
+      "edad": 30
+    }
+  ]
+}

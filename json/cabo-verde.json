@@ -1,0 +1,161 @@
+{
+  "pais": "Cabo Verde",
+  "jugadores": [
+    {
+      "dorsal": 23,
+      "nombre": "CJ dos Santos",
+      "posicion": "Portero",
+      "edad": 25
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Márcio Rosa",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Vozinha",
+      "posicion": "Portero",
+      "edad": 40
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Logan Costa",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Diney Borges",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Kelvin Pires",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Roberto Lopes",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Stopira",
+      "posicion": "Defensa",
+      "edad": 38
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Sidny Lopes Cabral",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Wagner Pina",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Steven Moreira",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Kevin Lenini",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Laros Duarte",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 8,
+      "nombre": "João Paulo",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Deroy Duarte",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Jamiro Monteiro",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Yannick Semedo",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Hélio Varela",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Jovane Cabral",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Willy Semedo",
+      "posicion": "Delantero",
+      "edad": 32
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Ryan Mendes",
+      "posicion": "Delantero",
+      "edad": 36
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Telmo Arcanjo",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Garry Rodrigues",
+      "posicion": "Delantero",
+      "edad": 35
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Benchimol",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Dailon Livramento",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Nuno Da Costa",
+      "posicion": "Delantero",
+      "edad": 35
+    }
+  ]
+}

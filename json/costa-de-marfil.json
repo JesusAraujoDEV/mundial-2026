@@ -1,0 +1,161 @@
+{
+  "pais": "Costa de Marfil",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Yahia Fofana",
+      "posicion": "Portero",
+      "edad": 25
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Alban Lafont",
+      "posicion": "Portero",
+      "edad": 27
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Mohamed Koné",
+      "posicion": "Portero",
+      "edad": 24
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Ousmane Diomande",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Evan Ndicka",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Wilfried Singo",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Emmanuel Agbadou",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Odilon Kossounou",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Christopher Operi",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Ghislain Konan",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Guéla Doué",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Ibrahim Sangaré",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Jean Michaël Seri",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Christ Inao Oulaï",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Franck Kessié",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Seko Fofana",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Yan Diomande",
+      "posicion": "Delantero",
+      "edad": 19
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Bazoumana Touré",
+      "posicion": "Delantero",
+      "edad": 20
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Simon Adingra",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Parfait Guiagon",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Amad Diallo",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Evann Guessand",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Nicolas Pépé",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Ange-Yoan Bonny",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Elye Wahi",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Oumar Diakité",
+      "posicion": "Delantero",
+      "edad": 22
+    }
+  ]
+}

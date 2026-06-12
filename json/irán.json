@@ -1,0 +1,161 @@
+{
+  "pais": "Irán",
+  "jugadores": [
+    {
+      "dorsal": 12,
+      "nombre": "Payam Niazmand",
+      "posicion": "Portero",
+      "edad": 31
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Alireza Beiranvand",
+      "posicion": "Portero",
+      "edad": 33
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Seyed Hossein Hosseini",
+      "posicion": "Portero",
+      "edad": 33
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Hossein Kanaani",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Danial Eiri",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Ali Nemati",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Shoja Khalilzadeh",
+      "posicion": "Defensa",
+      "edad": 37
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Milad Mohammadi",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Ehsan Hajsafi",
+      "posicion": "Defensa",
+      "edad": 36
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Arya Yousefi",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Saleh Hardani",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Ramin Rezaeian",
+      "posicion": "Defensa",
+      "edad": 36
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Saeed Ezatolahi",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Mohammad Ghorbani",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Roozbeh Cheshmi",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Amirmohammad Razzaghinia",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Saman Ghoddos",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Mehdi Ghayedi",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Mohammad Mohebi",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Mehdi Torabi",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Alireza Jahanbakhsh",
+      "posicion": "Delantero",
+      "edad": 32
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Amirhossein Hosseinzadeh",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Mehdi Taremi",
+      "posicion": "Delantero",
+      "edad": 33
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Dennis Eckert Ayensa",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Ali Alipour",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Shahriar Moghanlou",
+      "posicion": "Delantero",
+      "edad": 31
+    }
+  ]
+}

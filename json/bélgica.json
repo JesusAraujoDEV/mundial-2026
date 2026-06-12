@@ -1,0 +1,161 @@
+{
+  "pais": "Bélgica",
+  "jugadores": [
+    {
+      "dorsal": 12,
+      "nombre": "Senne Lammens",
+      "posicion": "Portero",
+      "edad": 23
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Mike Penders",
+      "posicion": "Portero",
+      "edad": 20
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Thibaut Courtois",
+      "posicion": "Portero",
+      "edad": 34
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Zeno Debast",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Nathan Ngoy",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Koni De Winter",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Arthur Theate",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Brandon Mechele",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Maxim De Cuyper",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Joaquin Seys",
+      "posicion": "Defensa",
+      "edad": 21
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Timothy Castagne",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Thomas Meunier",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Amadou Onana",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Nicolas Raskin",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Axel Witsel",
+      "posicion": "Mediocentro",
+      "edad": 37
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Youri Tielemans",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Alexis Saelemaekers",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Diego Moreira",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Charles De Ketelaere",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Kevin De Bruyne",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Hans Vanaken",
+      "posicion": "Mediocentro",
+      "edad": 33
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Jérémy Doku",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Leandro Trossard",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Dodi Lukébakio",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Matias Fernandez-Pardo",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Romelu Lukaku",
+      "posicion": "Delantero",
+      "edad": 33
+    }
+  ]
+}

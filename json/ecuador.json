@@ -1,0 +1,161 @@
+{
+  "pais": "Ecuador",
+  "jugadores": [
+    {
+      "dorsal": 22,
+      "nombre": "Gonzalo Valle",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Moisés Ramírez",
+      "posicion": "Portero",
+      "edad": 25
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Hernán Galíndez",
+      "posicion": "Portero",
+      "edad": 39
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Willian Pacho",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Piero Hincapié",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Joel Ordóñez",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Jackson Porozo",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Félix Torres",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Pervis Estupiñán",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Yaimar Medina",
+      "posicion": "Defensa",
+      "edad": 21
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Angelo Preciado",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Moisés Caicedo",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Jordy Alcívar",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Denil Castillo",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Alan Franco",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Kendry Páez",
+      "posicion": "Mediocentro",
+      "edad": 19
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Pedro Vite",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Nilson Angulo",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Gonzalo Plata",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Alan Minda",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Anthony Valencia",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 9,
+      "nombre": "John Yeboah",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Jeremy Arévalo",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Kevin Rodríguez",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Jordy Caicedo",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Enner Valencia",
+      "posicion": "Delantero",
+      "edad": 36
+    }
+  ]
+}

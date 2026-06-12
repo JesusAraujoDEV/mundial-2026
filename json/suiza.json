@@ -1,0 +1,161 @@
+{
+  "pais": "Suiza",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Gregor Kobel",
+      "posicion": "Portero",
+      "edad": 28
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Marvin Keller",
+      "posicion": "Portero",
+      "edad": 23
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Yvon Mvogo",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Manuel Akanji",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Aurèle Amenda",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Luca Jaquez",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Nico Elvedi",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Eray Cömert",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Miro Muheim",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Ricardo Rodríguez",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Silvan Widmer",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Denis Zakaria",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Ardon Jashari",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Granit Xhaka",
+      "posicion": "Mediocentro",
+      "edad": 33
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Johan Manzambi",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Djibril Sow",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Michel Aebischer",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Remo Freuler",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Fabian Rieder",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Christian Fassnacht",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Noah Okafor",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Rubén Vargas",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Dan Ndoye",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Breel Embolo",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Zeki Amdouni",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Cedric Itten",
+      "posicion": "Delantero",
+      "edad": 29
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "pais": "Jordania",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Yazeed Abulaila",
+      "posicion": "Portero",
+      "edad": 33
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Noor Bane Ataya",
+      "posicion": "Portero",
+      "edad": 33
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Abdallah Al-Fakhouri",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Yazan Al-Arab",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Saed Al-Rousan",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Abdallah Nasib",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Husam Abu Dahab",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Mohammad Abualnadi",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Saleem Obaid",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Mohannad Abu Taha",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Mohammad Abu Hasheesh",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Mohammad Abu Ghoush",
+      "posicion": "Defensa",
+      "edad": 20
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Ehsan Haddad",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Anas Badawi",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Nizar Al-Rashdan",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Amer Jamous",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Noor Al-Rawabdeh",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Ibrahim Saadeh",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Rajaei Ayed",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Mohammad Al-Dawoud",
+      "posicion": "Mediocentro",
+      "edad": 33
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Odeh Fakhoury",
+      "posicion": "Delantero",
+      "edad": 20
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Mahmoud Al-Mardi",
+      "posicion": "Delantero",
+      "edad": 32
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Mousa Tamari",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Shararh",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Ali Azaizeh",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Ali Olwan",
+      "posicion": "Delantero",
+      "edad": 26
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "pais": "Bosnia-Herzegovina",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Nikola Vasilj",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Martin Zlomislic",
+      "posicion": "Portero",
+      "edad": 27
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Mladen Jurkas",
+      "posicion": "Portero",
+      "edad": 18
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Tarik Muharemović",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Sead Kolasinac",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Stjepan Radeljic",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Nikola Katic",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Nihad Mujakic",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Dennis Hadzikadunic",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Amar Dedić",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Arjan Malic",
+      "posicion": "Defensa",
+      "edad": 20
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Amir Hadziahmetovic",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Ivan Šunjić",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Dzenis Burnic",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Benjamin Tahirović",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Armin Gigovic",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Ivan Basic",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Amar Memić",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Ermin Mahmic",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Kerim Alajbegovic",
+      "posicion": "Delantero",
+      "edad": 18
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Esmir Bajraktarevic",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Ermedin Demirovic",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Haris Tabakovic",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Jovo Lukić",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Samed Bazdar",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Edin Dzeko",
+      "posicion": "Delantero",
+      "edad": 40
+    }
+  ]
+}

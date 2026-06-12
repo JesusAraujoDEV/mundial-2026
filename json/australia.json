@@ -1,0 +1,161 @@
+{
+  "pais": "Australia",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Mathew Ryan",
+      "posicion": "Portero",
+      "edad": 34
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Patrick Beach",
+      "posicion": "Portero",
+      "edad": 22
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Paul Izzo",
+      "posicion": "Portero",
+      "edad": 31
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Alessandro Circati",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Lucas Herrington",
+      "posicion": "Defensa",
+      "edad": 18
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Harry Souttar",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Cameron Burgess",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Milos Degenek",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Jordan Bos",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Aziz Behich",
+      "posicion": "Defensa",
+      "edad": 35
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Jacob Italiano",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Jason Geria",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Aiden O'Neill",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Kai Trewin",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Paul Okon-Engstler",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Cammy Devlin",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Connor Metcalfe",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Jackson Irvine",
+      "posicion": "Mediocentro",
+      "edad": 33
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Ajdin Hrustic",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Cristian Volpato",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Nishan Velupillay",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Awer Mabil",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Mathew Leckie",
+      "posicion": "Delantero",
+      "edad": 35
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Nestory Irankunda",
+      "posicion": "Delantero",
+      "edad": 20
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Mohamed Touré",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Tete Yengi",
+      "posicion": "Delantero",
+      "edad": 25
+    }
+  ]
+}

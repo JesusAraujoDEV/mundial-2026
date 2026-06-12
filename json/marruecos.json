@@ -1,0 +1,161 @@
+{
+  "pais": "Marruecos",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Yassine Bounou",
+      "posicion": "Portero",
+      "edad": 35
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Ahmed Reda Tagnaouti",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Munir El Kajoui",
+      "posicion": "Portero",
+      "edad": 37
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Chadi Riad",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Issa Diop",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Redouane Halhal",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Marwane Saadane",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Anass Salah-Eddine",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Youssef Belammari",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Achraf Hakimi",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Noussair Mazraoui",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Zakaria El Ouahdi",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Sofyan Amrabat",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Ayyoub Bouaddi",
+      "posicion": "Mediocentro",
+      "edad": 18
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Neil El Aynaoui",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Samir El Mourabet",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Azzedine Ounahi",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Ismael Saibari",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Bilal El Khannouss",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Soufiane Rahimi",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Amine Sbaï",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Brahim Díaz",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Chemsdine Talbi",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Gessime Yassine",
+      "posicion": "Delantero",
+      "edad": 20
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Ayoube Amaimouni-Echghouyab",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Ayoub El Kaabi",
+      "posicion": "Delantero",
+      "edad": 32
+    }
+  ]
+}

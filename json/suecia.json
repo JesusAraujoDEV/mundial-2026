@@ -1,0 +1,161 @@
+{
+  "pais": "Suecia",
+  "jugadores": [
+    {
+      "dorsal": 12,
+      "nombre": "Viktor Johansson",
+      "posicion": "Portero",
+      "edad": 27
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Jacob Widell Zetterström",
+      "posicion": "Portero",
+      "edad": 27
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Kristoffer Nordfeldt",
+      "posicion": "Portero",
+      "edad": 36
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Isak Hien",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Gustaf Lagerbielke",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Victor Lindelöf",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Hjalmar Ekdal",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Eric Smith",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Carl Starfelt",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Daniel Svensson",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Gabriel Gudmundsson",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Ken Sema",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Jesper Karlström",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Lucas Bergvall",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Yasin Ayari",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Mattias Svanberg",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Besfort Zeneli",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Herman Johansson",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Elliot Stroud",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Benjamin Nygren",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Taha Ali",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Anthony Elanga",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Alexander Bernhardsson",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Alexander Isak",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Viktor Gyökeres",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Gustaf Nilsson",
+      "posicion": "Delantero",
+      "edad": 29
+    }
+  ]
+}

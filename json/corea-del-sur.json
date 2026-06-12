@@ -1,0 +1,161 @@
+{
+  "pais": "Corea del Sur",
+  "jugadores": [
+    {
+      "dorsal": 12,
+      "nombre": "Bum-keun Song",
+      "posicion": "Portero",
+      "edad": 28
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Hyeon-woo Jo",
+      "posicion": "Portero",
+      "edad": 34
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Seung-gyu Kim",
+      "posicion": "Portero",
+      "edad": 35
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Min-jae Kim",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Han-beom Lee",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Tae-hyeon Kim",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Gi-hyuk Lee",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Wi-je Cho",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Tae-seok Lee",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Young-woo Seol",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Moon-hwan Kim",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 6,
+      "nombre": "In-beom Hwang",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Jin-seob Park",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Jens Castrop",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Seung-ho Paik",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Jin-gyu Kim",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Kang-in Lee",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Jun-ho Bae",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Jae-sung Lee",
+      "posicion": "Mediocentro",
+      "edad": 33
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Dong-gyeong Lee",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Heung-min Son",
+      "posicion": "Delantero",
+      "edad": 33
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Ji-sung Eom",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Hyun-jun Yang",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Hyeon-gyu Oh",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Hee-chan Hwang",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Gue-sung Cho",
+      "posicion": "Delantero",
+      "edad": 28
+    }
+  ]
+}

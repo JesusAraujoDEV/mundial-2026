@@ -1,0 +1,161 @@
+{
+  "pais": "Catar",
+  "jugadores": [
+    {
+      "dorsal": 22,
+      "nombre": "Meshaal Barsham",
+      "posicion": "Portero",
+      "edad": 28
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Mahmoud Abunada",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Salah Zakaria",
+      "posicion": "Portero",
+      "edad": 27
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Lucas Mendes",
+      "posicion": "Defensa",
+      "edad": 35
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Al-Hashmi Al-Hussain",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Issa Laye",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Boualem Khoukhi",
+      "posicion": "Defensa",
+      "edad": 35
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Pedro Miguel",
+      "posicion": "Defensa",
+      "edad": 35
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Homam Al-Amin",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Sultan Al-Brake",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Ayoub Al-Oui",
+      "posicion": "Defensa",
+      "edad": 21
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Jassem Gaber",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Mohamed Al-Mannai",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Assim Madibo",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Ahmed Fathi",
+      "posicion": "Mediocentro",
+      "edad": 33
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Karim Boudiaf",
+      "posicion": "Mediocentro",
+      "edad": 35
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Abdulaziz Hatim",
+      "posicion": "Mediocentro",
+      "edad": 35
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Hasan Al-Haydos",
+      "posicion": "Mediocentro",
+      "edad": 35
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Akram Afif",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Edmílson Junior",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Yusuf Abdurisag",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Tahsin Mohammed Jamshid",
+      "posicion": "Delantero",
+      "edad": 19
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Ahmed Al-Ganehi",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Almoez Ali",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Ahmed Alaaeldin",
+      "posicion": "Delantero",
+      "edad": 33
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Mohammed Muntari",
+      "posicion": "Delantero",
+      "edad": 32
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "pais": "Portugal",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Diogo Costa",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Rui Silva",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 12,
+      "nombre": "José Sá",
+      "posicion": "Portero",
+      "edad": 33
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Rúben Dias",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Gonçalo Inácio",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Tomás Araújo",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Renato Veiga",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Nuno Mendes",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Matheus Nunes",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Diogo Dalot",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 20,
+      "nombre": "João Cancelo",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Nélson Semedo",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Vitinha",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Rúben Neves",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Samú Costa",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 15,
+      "nombre": "João Neves",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Francisco Trincão",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Bruno Fernandes",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Bernardo Silva",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Rafael Leão",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Gonçalo Guedes",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Pedro Neto",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Francisco Conceição",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 11,
+      "nombre": "João Félix",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Gonçalo Ramos",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Cristiano Ronaldo",
+      "posicion": "Delantero",
+      "edad": 41
+    }
+  ]
+}

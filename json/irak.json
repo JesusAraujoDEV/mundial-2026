@@ -1,0 +1,161 @@
+{
+  "pais": "Irak",
+  "jugadores": [
+    {
+      "dorsal": 22,
+      "nombre": "Ahmed Basil Fadhil",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Fahad Talib",
+      "posicion": "Portero",
+      "edad": 31
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Jalal Hassan",
+      "posicion": "Portero",
+      "edad": 35
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Akam Hashem",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Zaid Tahseen",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Frans Putros",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Manaf Younis",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Rebin Sulaka",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Merchas Doski",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Ahmed Maknzi",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Hussein Ali",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Mustafa Saadoon",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Amir Al-Ammari",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Zaid Ismail",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Aimar Sher",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Zidane Iqbal",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Kevin Yakob",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Ibrahim Bayesh",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Marko Farji",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Youssef Amyn",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Ali Jasim",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Ahmed Qasem",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Ali Al-Hamadi",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Mohanad Ali",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Aymen Hussein",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Ali Yousif",
+      "posicion": "Delantero",
+      "edad": 30
+    }
+  ]
+}

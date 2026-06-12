@@ -1,0 +1,161 @@
+{
+  "pais": "Inglaterra",
+  "jugadores": [
+    {
+      "dorsal": 13,
+      "nombre": "Dean Henderson",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 23,
+      "nombre": "James Trafford",
+      "posicion": "Portero",
+      "edad": 23
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Jordan Pickford",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Marc Guéhi",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Jarell Quansah",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Ezri Konsa",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 5,
+      "nombre": "John Stones",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Dan Burn",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Nico O'Reilly",
+      "posicion": "Defensa",
+      "edad": 21
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Djed Spence",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Reece James",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Tino Livramento",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Jordan Henderson",
+      "posicion": "Mediocentro",
+      "edad": 35
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Declan Rice",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Elliot Anderson",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Kobbie Mainoo",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Jude Bellingham",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Morgan Rogers",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Eberechi Eze",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Anthony Gordon",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Marcus Rashford",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Bukayo Saka",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Noni Madueke",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Harry Kane",
+      "posicion": "Delantero",
+      "edad": 32
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Ollie Watkins",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Ivan Toney",
+      "posicion": "Delantero",
+      "edad": 30
+    }
+  ]
+}

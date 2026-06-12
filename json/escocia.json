@@ -1,0 +1,161 @@
+{
+  "pais": "Escocia",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Angus Gunn",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Liam Kelly",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Craig Gordon",
+      "posicion": "Portero",
+      "edad": 43
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Scott McKenna",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Jack Hendry",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 15,
+      "nombre": "John Souttar",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Dominic Hyam",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Grant Hanley",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Kieran Tierney",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Andrew Robertson",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Aaron Hickey",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Nathan Patterson",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Anthony Ralston",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Scott McTominay",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Lewis Ferguson",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 7,
+      "nombre": "John McGinn",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Ryan Christie",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Tyler Fletcher",
+      "posicion": "Mediocentro",
+      "edad": 19
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Kenny McLean",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Findlay Curtis",
+      "posicion": "Delantero",
+      "edad": 20
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Ben Gannon-Doak",
+      "posicion": "Delantero",
+      "edad": 20
+    },
+    {
+      "dorsal": 18,
+      "nombre": "George Hirst",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Ché Adams",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Lawrence Shankland",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Ross Stewart",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Lyndon Dykes",
+      "posicion": "Delantero",
+      "edad": 30
+    }
+  ]
+}

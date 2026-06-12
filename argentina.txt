@@ -1,0 +1,213 @@
+Estados Unidos
+ Esta página muestra la vista detallada del equipo actual. Muestra toda la información personal acerca de los jugadores tales como la edad, nacionalidad, detalles de contratos y valor de mercado.
+
+Elegir año	
+2026
+2026
+2025
+2024
+2023
+2022
+2021
+2020
+2019
+2018
+2017
+2016
+2015
+2014
+2013
+2012
+2011
+2010
+2009
+2008
+2007
+2006
+2005
+2004
+2003
+2002
+2001
+2000
+1999
+1998
+1997
+1996
+1995
+1994
+1993
+1992
+1991
+1990
+1989
+1988
+1987
+1986
+1985
+1984
+1983
+1982
+1981
+1980
+1979
+1978
+1977
+1976
+1975
+1974
+1973
+1972
+1971
+1969
+1968
+1967
+1966
+1965
+1964
+1963
+1961
+1960
+1959
+1958
+1957
+1956
+1955
+1954
+1953
+1952
+1951
+1950
+1949
+1948
+1947
+1946
+1937
+1936
+1935
+1934
+1933
+1930
+1929
+1928
+1927
+1926
+1925
+1924
+1923
+1916
+1915
+1904
+1903
+Compacto
+Ampliado
+Galería
+#
+Jugadores
+Edad
+Club	
+Valor de mercado
+1	
+Matt Turner	Matt Turner
+Portero
+31	New England Revolution	2,50 mill. €  
+25	
+Chris Brady	Chris Brady
+Portero
+22	Chicago Fire FC	2,50 mill. €  
+24	
+Matt Freese	Matt Freese
+Portero
+27	New York City FC	2,00 mill. €  
+3	
+Chris Richards	Chris Richards
+Defensa central
+26	Crystal Palace	28,00 mill. €  
+22	
+Mark McKenzie	Mark McKenzie
+Defensa central
+27	Toulouse FC	7,00 mill. €  
+6	
+Auston Trusty	Auston Trusty
+Defensa central
+27	Celtic FC	6,00 mill. €
+12	
+Miles Robinson	Miles Robinson
+Defensa central
+29	FC Cincinnati	3,50 mill. €  
+13	
+Tim Ream	Tim Ream 
+Defensa central
+38	Charlotte FC	150 mil €  
+5	
+Antonee Robinson	Antonee Robinson
+Lateral izquierdo
+28	Fulham FC	22,00 mill. €  
+2	
+Sergiño Dest	Sergiño Dest
+Lateral derecho
+25	PSV Eindhoven	18,00 mill. €  
+23	
+Joe Scally	Joe Scally
+Lateral derecho
+23	Borussia Mönchengladbach	7,00 mill. €  
+16	
+Alex Freeman	Alex Freeman
+Lateral derecho
+21	Villarreal CF	3,50 mill. €  
+4	
+Tyler Adams	Tyler Adams
+Pivote
+27	AFC Bournemouth	25,00 mill. €  
+8	
+Weston McKennie	Weston McKennie
+Mediocentro
+27	Juventus de Turín	30,00 mill. €  
+14	
+Sebastian Berhalter	Sebastian Berhalter
+Mediocentro
+25	Vancouver Whitecaps FC	8,00 mill. €  
+15	
+Cristian Roldán	Cristian Roldán
+Mediocentro
+31	Seattle Sounders FC	3,50 mill. €  
+21	
+Timothy Weah	Timothy Weah
+Interior derecho
+26	Olympique de Marsella	20,00 mill. €  
+17	
+Malik Tillman	Malik Tillman
+Mediocentro ofensivo
+24	Bayer 04 Leverkusen	30,00 mill. €  
+11	
+Brenden Aaronson	Brenden Aaronson
+Mediocentro ofensivo
+25	Leeds United	22,00 mill. €  
+7	
+Giovanni Reyna	Giovanni Reyna
+Mediocentro ofensivo
+23	Borussia Mönchengladbach	4,00 mill. €  
+18	
+Max Arfsten	Max Arfsten
+Extremo izquierdo
+25	Columbus Crew	5,00 mill. €  
+10	
+Christian Pulisic	Christian Pulisic
+Extremo derecho
+27	AC Milan	40,00 mill. €  
+26	
+Álex Zendejas	Álex Zendejas
+Extremo derecho
+28	CF América	10,00 mill. €
+20	
+Folarin Balogun	Folarin Balogun
+Delantero centro
+24	AS Mónaco	40,00 mill. €  
+9	
+Ricardo Pepi	Ricardo Pepi
+Delantero centro
+23	PSV Eindhoven	30,00 mill. €  
+19	
+Haji Wright	Haji Wright
+Delantero centro
+28	Coventry City	16,00 mill. €  

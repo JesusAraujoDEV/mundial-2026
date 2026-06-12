@@ -1,0 +1,161 @@
+{
+  "pais": "República Democrática del Congo",
+  "jugadores": [
+    {
+      "dorsal": 21,
+      "nombre": "Matthieu Epolo",
+      "posicion": "Portero",
+      "edad": 21
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Timothy Fayulu",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Lionel Mpasi-Nzau",
+      "posicion": "Portero",
+      "edad": 31
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Axel Tuanzebe",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Steve Kapuadi",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Chancel Mbemba",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Dylan Batubinsika",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Joris Kayembe",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Arthur Masuaku",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Aaron Wan-Bissaka",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Gédéon Kalulu",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Ngal'ayel Mukau",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Charles Pickel",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Noah Sadiki",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Edo Kayembe",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Samuel Moutoussamy",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Aaron Tshibola",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Meschack Elia",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Gaël Kakuta",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Nathanaël Mbuku",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Brian Cipenga",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Théo Bongonda",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Yoane Wissa",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Simon Banza",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Fiston Mayele",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Cédric Bakambu",
+      "posicion": "Delantero",
+      "edad": 35
+    }
+  ]
+}

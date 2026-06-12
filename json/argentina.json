@@ -1,0 +1,161 @@
+{
+  "pais": "Argentina",
+  "jugadores": [
+    {
+      "dorsal": 23,
+      "nombre": "Emiliano Martínez",
+      "posicion": "Portero",
+      "edad": 33
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Gerónimo Rulli",
+      "posicion": "Portero",
+      "edad": 34
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Juan Musso",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Cristian Romero",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Lisandro Martínez",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Marcos Senesi",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Facundo Medina",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Nicolás Otamendi",
+      "posicion": "Defensa",
+      "edad": 38
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Nicolás Tagliafico",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Nahuel Molina",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Gonzalo Montiel",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Leandro Paredes",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Enzo Fernández",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Alexis Mac Allister",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Valentín Barco",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Exequiel Palacios",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Rodrigo De Paul",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Nico Paz",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Giovani Lo Celso",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Nico González",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Thiago Almada",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Giuliano Simeone",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Lionel Messi",
+      "posicion": "Delantero",
+      "edad": 38
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Julián Alvarez",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Lautaro Martínez",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 21,
+      "nombre": "José Manuel López",
+      "posicion": "Delantero",
+      "edad": 25
+    }
+  ]
+}

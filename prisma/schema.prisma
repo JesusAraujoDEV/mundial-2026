@@ -29,6 +29,8 @@ model Pais {
   nombre             String               @unique @db.VarChar(50)
   banderaUrl         String?              @map("bandera_url") @db.VarChar(255)
   jugadores          Jugador[]
+  grupos             Grupo[]
+  tarjetas           TarjetaPartido[]
   partidosLocal      Partido[]            @relation("Local")
   partidosVisitante  Partido[]            @relation("Visitante")
   especialesCampeon  PrediccionEspecial[] @relation("Campeon")
@@ -46,6 +48,7 @@ model Jugador {
   dorsal              Int?
   edad                Int?
   pais                Pais                 @relation(fields: [paisId], references: [id], onDelete: Cascade)
+  goles               GolPartido[]
   especialesBalonOro  PrediccionEspecial[] @relation("BalonOro")
   especialesBotaOro   PrediccionEspecial[] @relation("BotaOro")
   especialesGuanteOro PrediccionEspecial[] @relation("GuanteOro")
@@ -54,11 +57,60 @@ model Jugador {
   @@schema("mundial")
 }
 
+model Grupo {
+  id              Int    @id @default(autoincrement())
+  nombre          String @unique @db.VarChar(5) // A, B, C, ... L
+  paisId          Int    @map("pais_id")
+  puntos          Int    @default(0)
+  partidosJugados Int    @default(0) @map("partidos_jugados")
+  ganados         Int    @default(0)
+  empatados       Int    @default(0)
+  perdidos        Int    @default(0)
+  golesAFavor     Int    @default(0) @map("goles_a_favor")
+  golesEnContra   Int    @default(0) @map("goles_en_contra")
+  diferenciaGoles Int    @default(0) @map("diferencia_goles")
+  tarjetasAmarillas Int  @default(0) @map("tarjetas_amarillas")
+  tarjetasRojas   Int    @default(0) @map("tarjetas_rojas")
+  fairPlayPuntos  Int    @default(0) @map("fair_play_puntos")
+  pais            Pais   @relation(fields: [paisId], references: [id])
+
+  @@unique([nombre, paisId])
+  @@map("grupos")
+  @@schema("mundial")
+}
+
+model GolPartido {
+  id        Int    @id @default(autoincrement())
+  partidoId Int    @map("partido_id")
+  jugadorId Int    @map("jugador_id")
+  minuto    Int?
+  tipo      String @default("normal") @db.VarChar(30) // normal, penal, autogol
+  partido   Partido  @relation(fields: [partidoId], references: [id], onDelete: Cascade)
+  jugador   Jugador  @relation(fields: [jugadorId], references: [id], onDelete: Cascade)
+
+  @@map("goles_partidos")
+  @@schema("mundial")
+}
+
+model TarjetaPartido {
+  id        Int    @id @default(autoincrement())
+  partidoId Int    @map("partido_id")
+  paisId    Int    @map("pais_id")
+  tipo      String @db.VarChar(10) // amarilla, roja
+  minuto    Int?
+  partido   Partido @relation(fields: [partidoId], references: [id], onDelete: Cascade)
+  pais      Pais    @relation(fields: [paisId], references: [id], onDelete: Cascade)
+
+  @@map("tarjetas_partidos")
+  @@schema("mundial")
+}
+
 model Partido {
   id                  Int                 @id @default(autoincrement())
   localId             Int                 @map("local_id")
   visitanteId         Int                 @map("visitante_id")
   fase                String              @db.VarChar(50)
+  grupo               String?             @db.VarChar(5)
   fecha               DateTime
   golesLocal          Int?                @map("goles_local")
   golesVisitante      Int?                @map("goles_visitante")
@@ -67,6 +119,8 @@ model Partido {
   local               Pais                @relation("Local", fields: [localId], references: [id])
   visitante           Pais                @relation("Visitante", fields: [visitanteId], references: [id])
   pronosticos         PronosticoPartido[]
+  goles               GolPartido[]
+  tarjetas            TarjetaPartido[]
 
   @@map("partidos")
   @@schema("mundial")

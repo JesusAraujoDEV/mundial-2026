@@ -1,0 +1,161 @@
+{
+  "pais": "Francia",
+  "jugadores": [
+    {
+      "dorsal": 23,
+      "nombre": "Robin Risser",
+      "posicion": "Portero",
+      "edad": 21
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Mike Maignan",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Brice Samba",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 17,
+      "nombre": "William Saliba",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Dayot Upamecano",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Maxence Lacroix",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Ibrahima Konaté",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Theo Hernández",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Lucas Hernández",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Lucas Digne",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Jules Koundé",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Malo Gusto",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Aurélien Tchouaméni",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 13,
+      "nombre": "N'Golo Kanté",
+      "posicion": "Mediocentro",
+      "edad": 35
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Warren Zaïre-Emery",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Manu Koné",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Adrien Rabiot",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Rayan Cherki",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Bradley Barcola",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Michael Olise",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Désiré Doué",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Maghnes Akliouche",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Kylian Mbappé",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Ousmane Dembélé",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Marcus Thuram",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Jean-Philippe Mateta",
+      "posicion": "Delantero",
+      "edad": 28
+    }
+  ]
+}

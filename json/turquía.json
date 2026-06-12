@@ -1,0 +1,161 @@
+{
+  "pais": "Turquía",
+  "jugadores": [
+    {
+      "dorsal": 23,
+      "nombre": "Uğurcan Çakır",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Altay Bayındır",
+      "posicion": "Portero",
+      "edad": 28
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Mert Günok",
+      "posicion": "Portero",
+      "edad": 37
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Ozan Kabak",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Merih Demiral",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Abdülkerim Bardakcı",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Çağlar Söyüncü",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Samet Akaydin",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Ferdi Kadıoğlu",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Eren Elmalı",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Zeki Çelik",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Mert Müldür",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Hakan Çalhanoğlu",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 16,
+      "nombre": "İsmail Yüksek",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Salih Özcan",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Kaan Ayhan",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Orkun Kökçü",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Arda Güler",
+      "posicion": "Mediocentro",
+      "edad": 21
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Can Uzun",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Kenan Yıldız",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Barış Alper Yılmaz",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Kerem Aktürkoğlu",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Yunus Akgün",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Oğuz Aydın",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 17,
+      "nombre": "İrfan Can Kahveci",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Deniz Gül",
+      "posicion": "Delantero",
+      "edad": 21
+    }
+  ]
+}

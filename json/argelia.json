@@ -1,0 +1,161 @@
+{
+  "pais": "Argelia",
+  "jugadores": [
+    {
+      "dorsal": 23,
+      "nombre": "Luca Zidane",
+      "posicion": "Portero",
+      "edad": 28
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Oussama Benbout",
+      "posicion": "Portero",
+      "edad": 31
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Melvin Mastil",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Ramy Bensebaini",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Samir Chergui",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Zineddine Belaid",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Mohamed Amine Tougai",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Aïssa Mandi",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Achref Abada",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Rayan Aït-Nouri",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Jaouen Hadjam",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Rafik Belghali",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Ramiz Zerrouki",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Nabil Bentaleb",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Hicham Boudaoui",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Yassine Titraoui",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Ibrahim Maza",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Farès Chaïbi",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Houssem Aouar",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Adil Boulbina",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Anis Hadj Moussa",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Farès Ghedjemis",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Riyad Mahrez",
+      "posicion": "Delantero",
+      "edad": 35
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Amine Gouiri",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Mohamed Amoura",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Nadhir Benbouali",
+      "posicion": "Delantero",
+      "edad": 26
+    }
+  ]
+}

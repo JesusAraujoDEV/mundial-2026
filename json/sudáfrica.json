@@ -1,0 +1,161 @@
+{
+  "pais": "Sudáfrica",
+  "jugadores": [
+    {
+      "dorsal": 16,
+      "nombre": "Sipho Chaine",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Ronwen Williams",
+      "posicion": "Portero",
+      "edad": 34
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Ricardo Goss",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Mbekezeli Mbokazi",
+      "posicion": "Defensa",
+      "edad": 20
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Ime Okon",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Olwethu Makhanya",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Nkosinathi Sibisi",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Khulumani Ndamane",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Samukele Kabini",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Aubrey Modiba",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Bradley Cross",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Thabang Matuludi",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Khuliso Mudau",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Kamogelo Sebelebele",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Teboho Mokoena",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Thalente Mbatha",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Jayden Adams",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Yaya Sithole",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Themba Zwane",
+      "posicion": "Mediocentro",
+      "edad": 36
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Relebohile Mofokeng",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Oswin Appollis",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Tshepang Moremi",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Thapelo Maseko",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Lyle Foster",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Iqraam Rayners",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Evidence Makgopa",
+      "posicion": "Delantero",
+      "edad": 26
+    }
+  ]
+}

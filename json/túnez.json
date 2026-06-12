@@ -1,0 +1,161 @@
+{
+  "pais": "Túnez",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Abdelmouhib Chamakh",
+      "posicion": "Portero",
+      "edad": 24
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Aymen Dahmen",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Sabri Ben Hessen",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Montassar Talbi",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Adem Arous",
+      "posicion": "Defensa",
+      "edad": 21
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Dylan Bronn",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Raed Chikhaoui",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Omar Rekik",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Ali Abdi",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Mohamed Amine Ben Hamida",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Yan Valery",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Moutaz Neffati",
+      "posicion": "Defensa",
+      "edad": 21
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Ellyes Skhiri",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Rani Khedira",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Mohamed Belhadj Mahmoud",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Anis Ben Slimane",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Hannibal",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Ismaël Gharbi",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Sebastian Tounekti",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Elias Achouri",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Elias Saad",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Mortadha Ben Ouanes",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Khalil Ayari",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Firas Chaouat",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Hazem Mastouri",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Rayan Elloumi",
+      "posicion": "Delantero",
+      "edad": 18
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+# ═══════════════════════════════════════════════════════════════
+# MUNDIAL 2026 API - Docker Ignore
+# Excluir archivos innecesarios del contexto de build
+# ═══════════════════════════════════════════════════════════════
+
+# Dependencias (se instalan dentro del contenedor)
+node_modules
+npm-debug.log*
+
+# Build output local
+dist
+
+# Env files (se inyectan como variables en Dokploy)
+.env
+.env.local
+.env.*.local
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archivos de datos/plantillas (no necesarios en la imagen)
+*.txt
+json/
+scripts/
+
+# Tests
+coverage
+.nyc_output
+
+# Docs
+README.md
+cambios.txt

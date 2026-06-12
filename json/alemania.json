@@ -1,0 +1,161 @@
+{
+  "pais": "Alemania",
+  "jugadores": [
+    {
+      "dorsal": 21,
+      "nombre": "Alexander Nübel",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Manuel Neuer",
+      "posicion": "Portero",
+      "edad": 40
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Oliver Baumann",
+      "posicion": "Portero",
+      "edad": 36
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Nico Schlotterbeck",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Malick Thiaw",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Jonathan Tah",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Waldemar Anton",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Antonio Rüdiger",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Nathaniel Brown",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 22,
+      "nombre": "David Raum",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Aleksandar Pavlovic",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Angelo Stiller",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Joshua Kimmich",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Felix Nmecha",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Assan Ouédraogo",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Nadiem Amiri",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Leon Goretzka",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Pascal Groß",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Jamal Musiala",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Florian Wirtz",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Jamie Leweling",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Leroy Sané",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Kai Havertz",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Nick Woltemade",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Maximilian Beier",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Deniz Undav",
+      "posicion": "Delantero",
+      "edad": 29
+    }
+  ]
+}

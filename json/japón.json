@@ -1,0 +1,161 @@
+{
+  "pais": "Japón",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Zion Suzuki",
+      "posicion": "Portero",
+      "edad": 23
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Keisuke Osako",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Tomoki Hayakawa",
+      "posicion": "Portero",
+      "edad": 27
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Hiroki Ito",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Tsuyoshi Watanabe",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Ko Itakura",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Ayumu Seko",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Takehiro Tomiyasu",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Junnosuke Suzuki",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Shogo Taniguchi",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Yuto Nagatomo",
+      "posicion": "Defensa",
+      "edad": 39
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Yukinari Sugawara",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Kaishu Sano",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Ao Tanaka",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Daichi Kamada",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Daizen Maeda",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Keito Nakamura",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Takefusa Kubo",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Ritsu Doan",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Junya Ito",
+      "posicion": "Delantero",
+      "edad": 33
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Yuito Suzuki",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Ayase Ueda",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Keisuke Goto",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Kento Shiogai",
+      "posicion": "Delantero",
+      "edad": 21
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Shuto Machino",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Koki Ogawa",
+      "posicion": "Delantero",
+      "edad": 28
+    }
+  ]
+}

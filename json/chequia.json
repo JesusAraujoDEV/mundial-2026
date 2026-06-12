@@ -1,0 +1,161 @@
+{
+  "pais": "Chequia",
+  "jugadores": [
+    {
+      "dorsal": 23,
+      "nombre": "Lukas Hornicek",
+      "posicion": "Portero",
+      "edad": 23
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Matej Kovar",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Jindrich Stanek",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Ladislav Krejčí",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Robin Hranac",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Stepan Chaloupek",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 2,
+      "nombre": "David Zima",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Tomas Holes",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Jaroslav Zelený",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 14,
+      "nombre": "David Jurásek",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Vladimír Coufal",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Tomáš Souček",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Michal Sadílek",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Lukas Cerv",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Hugo Sochurek",
+      "posicion": "Mediocentro",
+      "edad": 18
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Alexandr Sojka",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Vladimír Darida",
+      "posicion": "Mediocentro",
+      "edad": 35
+    },
+    {
+      "dorsal": 21,
+      "nombre": "David Doudera",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Pavel Sulc",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Denis Visinsky",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Lukas Provod",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Patrik Schick",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Adam Hlozek",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Mojmír Chytil",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Jan Kuchta",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Tomas Chory",
+      "posicion": "Delantero",
+      "edad": 31
+    }
+  ]
+}

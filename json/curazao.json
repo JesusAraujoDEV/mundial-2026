@@ -1,0 +1,161 @@
+{
+  "pais": "Curazao",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Eloy Room",
+      "posicion": "Portero",
+      "edad": 37
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Trevor Doornbusch",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Tyrick Bodak",
+      "posicion": "Portero",
+      "edad": 24
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Armando Obispo",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Riechedly Bazoer",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Deveron Fonville",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Roshon van Eijma",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Juriën Gaari",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Sherel Floranus",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Shurandy Sambo",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Joshua Brenet",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Livano Comenencia",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Kevin Felida",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Godfried Roemeratoe",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Juninho Bacuna",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Leandro Bacuna",
+      "posicion": "Mediocentro",
+      "edad": 34
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Tyrese Noslin",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Tahith Chong",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Jearl Margaritha",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Jeremy Antonisse",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Kenji Gorré",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Sontje Hansen",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Ar'jany Martha",
+      "posicion": "Delantero",
+      "edad": 22
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Brandley Kuwas",
+      "posicion": "Delantero",
+      "edad": 33
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Gervane Kastaneer",
+      "posicion": "Delantero",
+      "edad": 30
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Jürgen Locadia",
+      "posicion": "Delantero",
+      "edad": 32
+    }
+  ]
+}

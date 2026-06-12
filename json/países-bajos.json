@@ -1,0 +1,161 @@
+{
+  "pais": "Países Bajos",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Bart Verbruggen",
+      "posicion": "Portero",
+      "edad": 23
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Robin Roefs",
+      "posicion": "Portero",
+      "edad": 23
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Mark Flekken",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Micky van de Ven",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Jan Paul van Hecke",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Virgil van Dijk",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Nathan Aké",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Jorrel Hato",
+      "posicion": "Defensa",
+      "edad": 20
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Mats Wieffer",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Denzel Dumfries",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Lutsharel Geertruida",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Ryan Gravenberch",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Teun Koopmeiners",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Marten de Roon",
+      "posicion": "Mediocentro",
+      "edad": 35
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Tijjani Reijnders",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Frenkie de Jong",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Quinten Timber",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Justin Kluivert",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Guus Til",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Cody Gakpo",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Crysencio Summerville",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Noa Lang",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Donyell Malen",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Brian Brobbey",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Memphis Depay",
+      "posicion": "Delantero",
+      "edad": 32
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Wout Weghorst",
+      "posicion": "Delantero",
+      "edad": 33
+    }
+  ]
+}

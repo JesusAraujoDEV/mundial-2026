@@ -1,0 +1,161 @@
+{
+  "pais": "Senegal",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Yehvann Diouf",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Edouard Mendy",
+      "posicion": "Portero",
+      "edad": 34
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Mory Diaw",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Mamadou Sarr",
+      "posicion": "Defensa",
+      "edad": 20
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Moussa Niakhaté",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Antoine Mendy",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Kalidou Koulibaly",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Abdoulaye Seck",
+      "posicion": "Defensa",
+      "edad": 34
+    },
+    {
+      "dorsal": 25,
+      "nombre": "El Hadji Malick Diouf",
+      "posicion": "Defensa",
+      "edad": 21
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Ismail Jakobs",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Idrissa Gueye",
+      "posicion": "Mediocentro",
+      "edad": 36
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Lamine Camara",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Pape Gueye",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Habib Diarra",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Pape Matar Sarr",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Bara Sapoko Ndiaye",
+      "posicion": "Mediocentro",
+      "edad": 18
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Pathé Ciss",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Krépin Diatta",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Assane Diao",
+      "posicion": "Delantero",
+      "edad": 20
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Sadio Mané",
+      "posicion": "Delantero",
+      "edad": 34
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Iliman Ndiaye",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Ismaïla Sarr",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Ibrahim Mbaye",
+      "posicion": "Delantero",
+      "edad": 18
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Nicolas Jackson",
+      "posicion": "Delantero",
+      "edad": 24
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Bamba Dieng",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Cherif Ndiaye",
+      "posicion": "Delantero",
+      "edad": 30
+    }
+  ]
+}

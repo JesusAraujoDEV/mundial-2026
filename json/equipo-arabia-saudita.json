@@ -1,0 +1,161 @@
+{
+  "pais": "Equipo Arabia Saudita",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Nawaf Al-Aqidi",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Mohammed Al-Owais",
+      "posicion": "Portero",
+      "edad": 34
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Ahmed Al-Kassar",
+      "posicion": "Portero",
+      "edad": 35
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Hassan Tambakti",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Abdulelah Al-Amri",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Jehad Thakri",
+      "posicion": "Defensa",
+      "edad": 24
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Ali Lajami",
+      "posicion": "Defensa",
+      "edad": 30
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Moteb Al-Harbi",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Ayman Yahya",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Hassan Kadesh",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Saud Abdulhamid",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Mohammed Abu Al-Shamat",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Ali Majrashi",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Nawaf Boushal",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Ziyad Al-Johani",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Abdullah Al-Khaibari",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Musab Al-Juwayr",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Nasser Al-Dawsari",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Mohamed Kanno",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Alaa Hejji",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Khalid Al-Ghannam",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Salem Al-Dawsari",
+      "posicion": "Delantero",
+      "edad": 34
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Sultan Mandash",
+      "posicion": "Delantero",
+      "edad": 31
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Firas Al-Buraikan",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Saleh Al-Shehri",
+      "posicion": "Delantero",
+      "edad": 32
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Abdullah Al-Hamdan",
+      "posicion": "Delantero",
+      "edad": 26
+    }
+  ]
+}

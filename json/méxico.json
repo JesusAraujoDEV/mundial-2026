@@ -1,0 +1,161 @@
+{
+  "pais": "México",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Raúl Rangel",
+      "posicion": "Portero",
+      "edad": 26
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Carlos Acevedo",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Guillermo Ochoa",
+      "posicion": "Portero",
+      "edad": 40
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Johan Vásquez",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 3,
+      "nombre": "César Montes",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Luis Romo",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Mateo Chávez",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Jesús Gallardo",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Israel Reyes",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Jorge Sánchez",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Edson Álvarez",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Érik Lira",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Luis Chávez",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Obed Vargas",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Orbelín Pineda",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Álvaro Fidalgo",
+      "posicion": "Mediocentro",
+      "edad": 29
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Gilberto Mora",
+      "posicion": "Mediocentro",
+      "edad": 17
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Brian Gutiérrez",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Alexis Vega",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 21,
+      "nombre": "César Huerta",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Roberto Alvarado",
+      "posicion": "Delantero",
+      "edad": 27
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Santiago Gimenez",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Armando González",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Julián Quiñones",
+      "posicion": "Delantero",
+      "edad": 29
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Raúl Jiménez",
+      "posicion": "Delantero",
+      "edad": 35
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Guillermo Martínez",
+      "posicion": "Delantero",
+      "edad": 31
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "pais": "Nueva Zelanda",
+  "jugadores": [
+    {
+      "dorsal": 1,
+      "nombre": "Max Crocombe",
+      "posicion": "Portero",
+      "edad": 32
+    },
+    {
+      "dorsal": 12,
+      "nombre": "Alex Paulsen",
+      "posicion": "Portero",
+      "edad": 23
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Michael Woud",
+      "posicion": "Portero",
+      "edad": 27
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Tyler Bindon",
+      "posicion": "Defensa",
+      "edad": 21
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Finn Surman",
+      "posicion": "Defensa",
+      "edad": 22
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Nando Pijnaker",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Michael Boxall",
+      "posicion": "Defensa",
+      "edad": 37
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Tommy Smith",
+      "posicion": "Defensa",
+      "edad": 36
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Liberato Cacace",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 19,
+      "nombre": "Ben Old",
+      "posicion": "Defensa",
+      "edad": 23
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Francis de Vries",
+      "posicion": "Defensa",
+      "edad": 31
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Callan Elliot",
+      "posicion": "Defensa",
+      "edad": 26
+    },
+    {
+      "dorsal": 2,
+      "nombre": "Tim Payne",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Joe Bell",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Ryan Thomas",
+      "posicion": "Mediocentro",
+      "edad": 31
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Alex Rufer",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 8,
+      "nombre": "Marko Stamenić",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Lachlan Bayliss",
+      "posicion": "Mediocentro",
+      "edad": 23
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Matthew Garbett",
+      "posicion": "Mediocentro",
+      "edad": 24
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Callum McCowatt",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Sarpreet Singh",
+      "posicion": "Mediocentro",
+      "edad": 27
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Jesse Randall",
+      "posicion": "Delantero",
+      "edad": 23
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Elijah Just",
+      "posicion": "Delantero",
+      "edad": 26
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Chris Wood",
+      "posicion": "Delantero",
+      "edad": 34
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Ben Waine",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Kosta Barbarouses",
+      "posicion": "Delantero",
+      "edad": 36
+    }
+  ]
+}

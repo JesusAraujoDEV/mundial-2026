@@ -1,0 +1,161 @@
+{
+  "pais": "Austria",
+  "jugadores": [
+    {
+      "dorsal": 12,
+      "nombre": "Florian Wiegele",
+      "posicion": "Portero",
+      "edad": 25
+    },
+    {
+      "dorsal": 13,
+      "nombre": "Patrick Pentz",
+      "posicion": "Portero",
+      "edad": 29
+    },
+    {
+      "dorsal": 1,
+      "nombre": "Alexander Schlager",
+      "posicion": "Portero",
+      "edad": 30
+    },
+    {
+      "dorsal": 2,
+      "nombre": "David Affengruber",
+      "posicion": "Defensa",
+      "edad": 25
+    },
+    {
+      "dorsal": 3,
+      "nombre": "Kevin Danso",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 15,
+      "nombre": "Philipp Lienhart",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 23,
+      "nombre": "Marco Friedl",
+      "posicion": "Defensa",
+      "edad": 28
+    },
+    {
+      "dorsal": 5,
+      "nombre": "Stefan Posch",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 25,
+      "nombre": "Michael Svoboda",
+      "posicion": "Defensa",
+      "edad": 27
+    },
+    {
+      "dorsal": 8,
+      "nombre": "David Alaba",
+      "posicion": "Defensa",
+      "edad": 33
+    },
+    {
+      "dorsal": 16,
+      "nombre": "Phillipp Mwene",
+      "posicion": "Defensa",
+      "edad": 32
+    },
+    {
+      "dorsal": 20,
+      "nombre": "Konrad Laimer",
+      "posicion": "Defensa",
+      "edad": 29
+    },
+    {
+      "dorsal": 6,
+      "nombre": "Nicolas Seiwald",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Dejan Ljubicic",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 10,
+      "nombre": "Florian Grillitsch",
+      "posicion": "Mediocentro",
+      "edad": 30
+    },
+    {
+      "dorsal": 24,
+      "nombre": "Paul Wanner",
+      "posicion": "Mediocentro",
+      "edad": 20
+    },
+    {
+      "dorsal": 17,
+      "nombre": "Carney Chukwuemeka",
+      "posicion": "Mediocentro",
+      "edad": 22
+    },
+    {
+      "dorsal": 4,
+      "nombre": "Xaver Schlager",
+      "posicion": "Mediocentro",
+      "edad": 28
+    },
+    {
+      "dorsal": 9,
+      "nombre": "Marcel Sabitzer",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 26,
+      "nombre": "Alessandro Schöpf",
+      "posicion": "Mediocentro",
+      "edad": 32
+    },
+    {
+      "dorsal": 22,
+      "nombre": "Alexander Prass",
+      "posicion": "Mediocentro",
+      "edad": 25
+    },
+    {
+      "dorsal": 18,
+      "nombre": "Romano Schmid",
+      "posicion": "Mediocentro",
+      "edad": 26
+    },
+    {
+      "dorsal": 21,
+      "nombre": "Patrick Wimmer",
+      "posicion": "Delantero",
+      "edad": 25
+    },
+    {
+      "dorsal": 14,
+      "nombre": "Sasa Kalajdzic",
+      "posicion": "Delantero",
+      "edad": 28
+    },
+    {
+      "dorsal": 7,
+      "nombre": "Marko Arnautovic",
+      "posicion": "Delantero",
+      "edad": 37
+    },
+    {
+      "dorsal": 11,
+      "nombre": "Michael Gregoritsch",
+      "posicion": "Delantero",
+      "edad": 32
+    }
+  ]
+}
