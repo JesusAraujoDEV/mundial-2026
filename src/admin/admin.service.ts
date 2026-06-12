@@ -70,6 +70,16 @@ export class AdminService {
 
     if (actualizarMarcador) {
       await this.recalcularPuntos(id, dto.golesLocal!, dto.golesVisitante!);
+
+      // Si es partido de fase de grupos, actualizar estadísticas del grupo
+      if (partidoActualizado.grupo) {
+        await this.actualizarEstadisticasGrupo(
+          partidoActualizado,
+          partido, // estado anterior
+          dto.golesLocal!,
+          dto.golesVisitante!,
+        );
+      }
     }
 
     return {
@@ -78,6 +88,104 @@ export class AdminService {
         : `Partido ${id} actualizado.`,
       partido: partidoActualizado,
     };
+  }
+
+  /**
+   * Actualiza la tabla de posiciones del grupo cuando se registra un resultado.
+   * Si el partido ya tenía marcador anterior, revierte esas estadísticas primero.
+   */
+  private async actualizarEstadisticasGrupo(
+    partido: any,
+    partidoAnterior: any,
+    golesLocal: number,
+    golesVisitante: number,
+  ) {
+    const grupo = partido.grupo;
+    if (!grupo) return;
+
+    // Si ya tenía resultado anterior, revertirlo
+    if (partidoAnterior.golesLocal !== null && partidoAnterior.golesVisitante !== null) {
+      await this.revertirStatsGrupo(
+        grupo,
+        partidoAnterior.localId,
+        partidoAnterior.visitanteId,
+        partidoAnterior.golesLocal,
+        partidoAnterior.golesVisitante,
+      );
+    }
+
+    // Aplicar nuevo resultado
+    const resLocal = golesLocal > golesVisitante ? 'G' : golesLocal === golesVisitante ? 'E' : 'P';
+    const resVisitante = resLocal === 'G' ? 'P' : resLocal === 'P' ? 'G' : 'E';
+
+    await this.aplicarStatsGrupo(grupo, partido.localId, golesLocal, golesVisitante, resLocal);
+    await this.aplicarStatsGrupo(grupo, partido.visitanteId, golesVisitante, golesLocal, resVisitante);
+  }
+
+  private async aplicarStatsGrupo(
+    grupo: string,
+    paisId: number,
+    gf: number,
+    gc: number,
+    resultado: string,
+  ) {
+    const puntos = resultado === 'G' ? 3 : resultado === 'E' ? 1 : 0;
+
+    await this.prisma.grupo.updateMany({
+      where: { nombre: grupo, paisId },
+      data: {
+        partidosJugados: { increment: 1 },
+        ganados: { increment: resultado === 'G' ? 1 : 0 },
+        empatados: { increment: resultado === 'E' ? 1 : 0 },
+        perdidos: { increment: resultado === 'P' ? 1 : 0 },
+        golesAFavor: { increment: gf },
+        golesEnContra: { increment: gc },
+        diferenciaGoles: { increment: gf - gc },
+        puntos: { increment: puntos },
+      },
+    });
+  }
+
+  private async revertirStatsGrupo(
+    grupo: string,
+    localId: number,
+    visitanteId: number,
+    golesLocal: number,
+    golesVisitante: number,
+  ) {
+    const resLocal = golesLocal > golesVisitante ? 'G' : golesLocal === golesVisitante ? 'E' : 'P';
+    const resVisitante = resLocal === 'G' ? 'P' : resLocal === 'P' ? 'G' : 'E';
+
+    const puntosLocal = resLocal === 'G' ? 3 : resLocal === 'E' ? 1 : 0;
+    const puntosVisitante = resVisitante === 'G' ? 3 : resVisitante === 'E' ? 1 : 0;
+
+    await this.prisma.grupo.updateMany({
+      where: { nombre: grupo, paisId: localId },
+      data: {
+        partidosJugados: { decrement: 1 },
+        ganados: { decrement: resLocal === 'G' ? 1 : 0 },
+        empatados: { decrement: resLocal === 'E' ? 1 : 0 },
+        perdidos: { decrement: resLocal === 'P' ? 1 : 0 },
+        golesAFavor: { decrement: golesLocal },
+        golesEnContra: { decrement: golesVisitante },
+        diferenciaGoles: { decrement: golesLocal - golesVisitante },
+        puntos: { decrement: puntosLocal },
+      },
+    });
+
+    await this.prisma.grupo.updateMany({
+      where: { nombre: grupo, paisId: visitanteId },
+      data: {
+        partidosJugados: { decrement: 1 },
+        ganados: { decrement: resVisitante === 'G' ? 1 : 0 },
+        empatados: { decrement: resVisitante === 'E' ? 1 : 0 },
+        perdidos: { decrement: resVisitante === 'P' ? 1 : 0 },
+        golesAFavor: { decrement: golesVisitante },
+        golesEnContra: { decrement: golesLocal },
+        diferenciaGoles: { decrement: golesVisitante - golesLocal },
+        puntos: { decrement: puntosVisitante },
+      },
+    });
   }
 
   private async recalcularPuntos(
