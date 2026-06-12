@@ -27,11 +27,11 @@ export class AuthController {
   @ApiOperation({
     summary: 'Crear usuario (Solo Admin)',
     description:
-      'El administrador crea una cuenta para un amigo con nombre, email y contraseña.',
+      'El administrador crea una cuenta para un amigo con nombre, username y contraseña.',
   })
   @ApiResponse({ status: 201, description: 'Usuario creado exitosamente.' })
   @ApiResponse({ status: 401, description: 'No autorizado.' })
-  @ApiResponse({ status: 409, description: 'El email ya está registrado.' })
+  @ApiResponse({ status: 409, description: 'El usuario ya está registrado.' })
   crearUsuario(@Body() dto: CrearUsuarioDto, @Request() req: any) {
     if (req.user.rol !== 'admin') {
       throw new Error('Solo el administrador puede crear usuarios.');

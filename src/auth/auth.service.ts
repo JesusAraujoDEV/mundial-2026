@@ -18,7 +18,7 @@ export class AuthService {
 
   async login(dto: LoginDto) {
     const usuario = await this.prisma.usuario.findUnique({
-      where: { email: dto.email },
+      where: { username: dto.username },
     });
 
     if (!usuario) {
@@ -33,7 +33,7 @@ export class AuthService {
 
     const payload = {
       sub: usuario.id,
-      email: usuario.email,
+      username: usuario.username,
       nombre: usuario.nombre,
       rol: usuario.rol,
     };
@@ -46,7 +46,7 @@ export class AuthService {
       usuario: {
         id: usuario.id,
         nombre: usuario.nombre,
-        email: usuario.email,
+        username: usuario.username,
         rol: usuario.rol,
         puntosTotales: usuario.puntosTotales,
       },
@@ -55,11 +55,11 @@ export class AuthService {
 
   async crearUsuario(dto: CrearUsuarioDto) {
     const existente = await this.prisma.usuario.findUnique({
-      where: { email: dto.email },
+      where: { username: dto.username },
     });
 
     if (existente) {
-      throw new ConflictException(`Ya existe un usuario con el email "${dto.email}".`);
+      throw new ConflictException(`Ya existe un usuario con el username "${dto.username}".`);
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -68,7 +68,7 @@ export class AuthService {
     const usuario = await this.prisma.usuario.create({
       data: {
         nombre: dto.nombre,
-        email: dto.email,
+        username: dto.username,
         passwordHash,
         rol: dto.rol ?? 'user',
       },
@@ -79,7 +79,7 @@ export class AuthService {
       usuario: {
         id: usuario.id,
         nombre: usuario.nombre,
-        email: usuario.email,
+        username: usuario.username,
         rol: usuario.rol,
       },
     };
@@ -91,7 +91,7 @@ export class AuthService {
       select: {
         id: true,
         nombre: true,
-        email: true,
+        username: true,
         rol: true,
         puntosTotales: true,
         createdAt: true,
