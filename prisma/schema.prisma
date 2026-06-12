@@ -1,0 +1,114 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas  = ["mundial"]
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+model Usuario {
+  id                     Int                  @id @default(autoincrement())
+  nombre                 String               @db.VarChar(100)
+  email                  String               @unique @db.VarChar(100)
+  passwordHash           String               @map("password_hash") @db.VarChar(255)
+  rol                    String               @default("user") @db.VarChar(20)
+  puntosTotales          Int                  @default(0) @map("puntos_totales")
+  createdAt              DateTime             @default(now()) @map("created_at")
+  pronosticosPartidos    PronosticoPartido[]
+  prediccionesEspeciales PrediccionEspecial[]
+
+  @@map("usuarios")
+  @@schema("mundial")
+}
+
+model Pais {
+  id                 Int                  @id @default(autoincrement())
+  nombre             String               @unique @db.VarChar(50)
+  banderaUrl         String?              @map("bandera_url") @db.VarChar(255)
+  jugadores          Jugador[]
+  partidosLocal      Partido[]            @relation("Local")
+  partidosVisitante  Partido[]            @relation("Visitante")
+  especialesCampeon  PrediccionEspecial[] @relation("Campeon")
+  especialesSorpresa PrediccionEspecial[] @relation("Sorpresa")
+
+  @@map("paises")
+  @@schema("mundial")
+}
+
+model Jugador {
+  id                  Int                  @id @default(autoincrement())
+  paisId              Int                  @map("pais_id")
+  nombre              String               @db.VarChar(100)
+  posicion            String?              @db.VarChar(50)
+  dorsal              Int?
+  edad                Int?
+  pais                Pais                 @relation(fields: [paisId], references: [id], onDelete: Cascade)
+  especialesBalonOro  PrediccionEspecial[] @relation("BalonOro")
+  especialesBotaOro   PrediccionEspecial[] @relation("BotaOro")
+  especialesGuanteOro PrediccionEspecial[] @relation("GuanteOro")
+
+  @@map("jugadores")
+  @@schema("mundial")
+}
+
+model Partido {
+  id                  Int                 @id @default(autoincrement())
+  localId             Int                 @map("local_id")
+  visitanteId         Int                 @map("visitante_id")
+  fase                String              @db.VarChar(50)
+  fecha               DateTime
+  golesLocal          Int?                @map("goles_local")
+  golesVisitante      Int?                @map("goles_visitante")
+  bloqueado           Boolean             @default(false)
+  actualizadoPorAdmin Boolean             @default(false) @map("actualizado_por_admin")
+  local               Pais                @relation("Local", fields: [localId], references: [id])
+  visitante           Pais                @relation("Visitante", fields: [visitanteId], references: [id])
+  pronosticos         PronosticoPartido[]
+
+  @@map("partidos")
+  @@schema("mundial")
+}
+
+model PronosticoPartido {
+  id                  Int      @id @default(autoincrement())
+  usuarioId           Int      @map("usuario_id")
+  partidoId           Int      @map("partido_id")
+  prediccionLocal     Int      @map("prediccion_local")
+  prediccionVisitante Int      @map("prediccion_visitante")
+  puntosGanados       Int      @default(0) @map("puntos_ganados")
+  createdAt           DateTime @default(now()) @map("created_at")
+  usuario             Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  partido             Partido  @relation(fields: [partidoId], references: [id], onDelete: Cascade)
+
+  @@unique([usuarioId, partidoId])
+  @@map("pronosticos_partidos")
+  @@schema("mundial")
+}
+
+model PrediccionEspecial {
+  id             Int      @id @default(autoincrement())
+  usuarioId      Int      @map("usuario_id")
+  campeonId      Int?     @map("campeon_id")
+  sorpresaId     Int?     @map("sorpresa_id")
+  balonOroId     Int?     @map("balon_oro_id")
+  botaOroId      Int?     @map("bota_oro_id")
+  guanteOroId    Int?     @map("guante_oro_id")
+  bloqueado      Boolean  @default(false)
+  puntosCampeon  Int      @default(0) @map("puntos_campeon")
+  puntosSorpresa Int      @default(0) @map("puntos_sorpresa")
+  puntosBalon    Int      @default(0) @map("puntos_balon")
+  puntosBota     Int      @default(0) @map("puntos_bota")
+  puntosGuante   Int      @default(0) @map("puntos_guante")
+  usuario        Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  campeon        Pais?    @relation("Campeon", fields: [campeonId], references: [id])
+  sorpresa       Pais?    @relation("Sorpresa", fields: [sorpresaId], references: [id])
+  balonOro       Jugador? @relation("BalonOro", fields: [balonOroId], references: [id])
+  botaOro        Jugador? @relation("BotaOro", fields: [botaOroId], references: [id])
+  guanteOro      Jugador? @relation("GuanteOro", fields: [guanteOroId], references: [id])
+
+  @@map("predicciones_especiales")
+  @@schema("mundial")
+}
