@@ -6,6 +6,7 @@ import { PronosticosModule } from './pronosticos/pronosticos.module';
 import { RankingModule } from './ranking/ranking.module';
 import { GruposModule } from './grupos/grupos.module';
 import { EstadisticasModule } from './estadisticas/estadisticas.module';
+import { DatosModule } from './datos/datos.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { EstadisticasModule } from './estadisticas/estadisticas.module';
     RankingModule,
     GruposModule,
     EstadisticasModule,
+    DatosModule,
   ],
 })
 export class AppModule {}
