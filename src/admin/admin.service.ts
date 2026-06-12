@@ -6,6 +6,7 @@ import {
 import { PrismaService } from '../prisma/prisma.service';
 import { CargarPaisDto } from './dto/cargar-pais.dto';
 import { ActualizarPartidoDto } from './dto/actualizar-partido.dto';
+import { CargarGolesDto } from './dto/cargar-goles.dto';
 
 @Injectable()
 export class AdminService {
@@ -229,12 +230,55 @@ export class AdminService {
             data: { puntosTotales: totalPuntos._sum.puntosGanados ?? 0 },
           });
         }
-      });
+      }, { timeout: 30000 });
     } catch (error) {
       throw new InternalServerErrorException(
         'Error al recalcular puntos. Transacción revertida.',
       );
     }
+  }
+
+  /**
+   * Carga los goles de un partido. Reemplaza los goles existentes con la nueva lista.
+   */
+  async cargarGoles(partidoId: number, dto: CargarGolesDto) {
+    const partido = await this.prisma.partido.findUnique({
+      where: { id: partidoId },
+      include: { local: true, visitante: true },
+    });
+
+    if (!partido) {
+      throw new NotFoundException(`Partido con ID ${partidoId} no encontrado.`);
+    }
+
+    // Eliminar goles anteriores del partido
+    await this.prisma.golPartido.deleteMany({
+      where: { partidoId },
+    });
+
+    // Insertar los nuevos goles
+    if (dto.goles.length > 0) {
+      await this.prisma.golPartido.createMany({
+        data: dto.goles.map((g) => ({
+          partidoId,
+          jugadorId: g.jugadorId,
+          minuto: g.minuto ?? null,
+          tipo: g.tipo ?? 'normal',
+        })),
+      });
+    }
+
+    const golesCreados = await this.prisma.golPartido.findMany({
+      where: { partidoId },
+      include: { jugador: { select: { id: true, nombre: true, dorsal: true } } },
+      orderBy: { minuto: 'asc' },
+    });
+
+    return {
+      message: `${golesCreados.length} gol(es) cargados para ${partido.local.nombre} vs ${partido.visitante.nombre}.`,
+      partidoId,
+      goles: golesCreados,
+    };
   }
 
   private calcularPuntos(
@@ -255,5 +299,65 @@ export class AdminService {
     }
 
     return 0;
+  }
+
+  /**
+   * Recalcula los puntos de TODOS los pronósticos basándose en resultados actuales.
+   * Útil cuando se insertan pronósticos por SQL o hay desincronización.
+   */
+  async recalcularTodosLosPuntos() {
+    const partidosConResultado = await this.prisma.partido.findMany({
+      where: {
+        golesLocal: { not: null },
+        golesVisitante: { not: null },
+        actualizadoPorAdmin: true,
+      },
+    });
+
+    let pronosticosActualizados = 0;
+
+    for (const partido of partidosConResultado) {
+      const pronosticos = await this.prisma.pronosticoPartido.findMany({
+        where: { partidoId: partido.id },
+      });
+
+      for (const pronostico of pronosticos) {
+        const puntos = this.calcularPuntos(
+          pronostico.prediccionLocal,
+          pronostico.prediccionVisitante,
+          partido.golesLocal!,
+          partido.golesVisitante!,
+        );
+
+        if (puntos !== pronostico.puntosGanados) {
+          await this.prisma.pronosticoPartido.update({
+            where: { id: pronostico.id },
+            data: { puntosGanados: puntos },
+          });
+          pronosticosActualizados++;
+        }
+      }
+    }
+
+    // Recalcular puntos totales de cada usuario
+    const usuarios = await this.prisma.usuario.findMany({ select: { id: true } });
+
+    for (const usuario of usuarios) {
+      const totalPuntos = await this.prisma.pronosticoPartido.aggregate({
+        where: { usuarioId: usuario.id },
+        _sum: { puntosGanados: true },
+      });
+
+      await this.prisma.usuario.update({
+        where: { id: usuario.id },
+        data: { puntosTotales: totalPuntos._sum.puntosGanados ?? 0 },
+      });
+    }
+
+    return {
+      message: `Recálculo completado. ${pronosticosActualizados} pronósticos actualizados.`,
+      partidosEvaluados: partidosConResultado.length,
+      pronosticosActualizados,
+    };
   }
 }
