@@ -49,6 +49,17 @@ export class AdminController {
     return this.adminService.recalcularTodosLosPuntos();
   }
 
+  @Post('recalcular-grupos')
+  @ApiOperation({
+    summary: 'Recalcular estadísticas de todos los grupos',
+    description:
+      'Resetea y recalcula las estadísticas de todos los grupos (puntos, PJ, GF, GC, etc.) basándose en los resultados actuales de los partidos de fase de grupos.',
+  })
+  @ApiResponse({ status: 200, description: 'Estadísticas de grupos recalculadas.' })
+  recalcularGrupos() {
+    return this.adminService.recalcularGrupos();
+  }
+
   @Post('partido/:id/goles')
   @ApiOperation({
     summary: 'Cargar goles de un partido',

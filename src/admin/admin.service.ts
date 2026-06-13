@@ -189,121 +189,58 @@ export class AdminService {
     });
   }
 
-  private async recalcularPuntos(
-    partidoId: number,
-    golesLocalReal: number,
-    golesVisitanteReal: number,
-  ) {
-    try {
-      await this.prisma.$transaction(async (tx) => {
-        const pronosticos = await tx.pronosticoPartido.findMany({
-          where: { partidoId },
-        });
-
-        for (const pronostico of pronosticos) {
-          const puntos = this.calcularPuntos(
-            pronostico.prediccionLocal,
-            pronostico.prediccionVisitante,
-            golesLocalReal,
-            golesVisitanteReal,
-          );
-
-          await tx.pronosticoPartido.update({
-            where: { id: pronostico.id },
-            data: { puntosGanados: puntos },
-          });
-        }
-
-        const usuarios = await tx.pronosticoPartido.groupBy({
-          by: ['usuarioId'],
-          where: { partidoId },
-        });
-
-        for (const { usuarioId } of usuarios) {
-          const totalPuntos = await tx.pronosticoPartido.aggregate({
-            where: { usuarioId },
-            _sum: { puntosGanados: true },
-          });
-
-          await tx.usuario.update({
-            where: { id: usuarioId },
-            data: { puntosTotales: totalPuntos._sum.puntosGanados ?? 0 },
-          });
-        }
-      }, { timeout: 30000 });
-    } catch (error) {
-      throw new InternalServerErrorException(
-        'Error al recalcular puntos. Transacción revertida.',
-      );
-    }
-  }
-
   /**
-   * Carga los goles de un partido. Reemplaza los goles existentes con la nueva lista.
+   * Recalcula las estadísticas de todos los grupos desde cero
+   * basándose en los resultados actuales de los partidos de fase de grupos.
    */
-  async cargarGoles(partidoId: number, dto: CargarGolesDto) {
-    const partido = await this.prisma.partido.findUnique({
-      where: { id: partidoId },
-      include: { local: true, visitante: true },
+  async recalcularGrupos() {
+    // Resetear todos los grupos a 0
+    await this.prisma.grupo.updateMany({
+      data: {
+        puntos: 0,
+        partidosJugados: 0,
+        ganados: 0,
+        empatados: 0,
+        perdidos: 0,
+        golesAFavor: 0,
+        golesEnContra: 0,
+        diferenciaGoles: 0,
+        tarjetasAmarillas: 0,
+        tarjetasRojas: 0,
+        fairPlayPuntos: 0,
+      },
     });
 
-    if (!partido) {
-      throw new NotFoundException(`Partido con ID ${partidoId} no encontrado.`);
+    // Buscar todos los partidos de grupos con resultado
+    const partidos = await this.prisma.partido.findMany({
+      where: {
+        fase: 'grupos',
+        golesLocal: { not: null },
+        golesVisitante: { not: null },
+        grupo: { not: null },
+      },
+    });
+
+    for (const partido of partidos) {
+      const gl = partido.golesLocal!;
+      const gv = partido.golesVisitante!;
+      const grupo = partido.grupo!;
+
+      const resLocal = gl > gv ? 'G' : gl === gv ? 'E' : 'P';
+      const resVisitante = resLocal === 'G' ? 'P' : resLocal === 'P' ? 'G' : 'E';
+
+      await this.aplicarStatsGrupo(grupo, partido.localId, gl, gv, resLocal);
+      await this.aplicarStatsGrupo(grupo, partido.visitanteId, gv, gl, resVisitante);
     }
-
-    // Eliminar goles anteriores del partido
-    await this.prisma.golPartido.deleteMany({
-      where: { partidoId },
-    });
-
-    // Insertar los nuevos goles
-    if (dto.goles.length > 0) {
-      await this.prisma.golPartido.createMany({
-        data: dto.goles.map((g) => ({
-          partidoId,
-          jugadorId: g.jugadorId,
-          minuto: g.minuto ?? null,
-          tipo: g.tipo ?? 'normal',
-        })),
-      });
-    }
-
-    const golesCreados = await this.prisma.golPartido.findMany({
-      where: { partidoId },
-      include: { jugador: { select: { id: true, nombre: true, dorsal: true } } },
-      orderBy: { minuto: 'asc' },
-    });
 
     return {
-      message: `${golesCreados.length} gol(es) cargados para ${partido.local.nombre} vs ${partido.visitante.nombre}.`,
-      partidoId,
-      goles: golesCreados,
+      message: `Grupos recalculados. ${partidos.length} partidos procesados.`,
+      partidosProcesados: partidos.length,
     };
-  }
-
-  private calcularPuntos(
-    predLocal: number,
-    predVisitante: number,
-    realLocal: number,
-    realVisitante: number,
-  ): number {
-    if (predLocal === realLocal && predVisitante === realVisitante) {
-      return 5;
-    }
-
-    const resultadoPred = Math.sign(predLocal - predVisitante);
-    const resultadoReal = Math.sign(realLocal - realVisitante);
-
-    if (resultadoPred === resultadoReal) {
-      return 3;
-    }
-
-    return 0;
   }
 
   /**
    * Recalcula los puntos de TODOS los pronósticos basándose en resultados actuales.
-   * Útil cuando se insertan pronósticos por SQL o hay desincronización.
    */
   async recalcularTodosLosPuntos() {
     const partidosConResultado = await this.prisma.partido.findMany({
@@ -359,5 +296,117 @@ export class AdminService {
       partidosEvaluados: partidosConResultado.length,
       pronosticosActualizados,
     };
+  }
+
+  /**
+   * Carga los goles de un partido. Reemplaza los goles existentes con la nueva lista.
+   */
+  async cargarGoles(partidoId: number, dto: CargarGolesDto) {
+    const partido = await this.prisma.partido.findUnique({
+      where: { id: partidoId },
+      include: { local: true, visitante: true },
+    });
+
+    if (!partido) {
+      throw new NotFoundException(`Partido con ID ${partidoId} no encontrado.`);
+    }
+
+    // Eliminar goles anteriores del partido
+    await this.prisma.golPartido.deleteMany({
+      where: { partidoId },
+    });
+
+    // Insertar los nuevos goles
+    if (dto.goles.length > 0) {
+      await this.prisma.golPartido.createMany({
+        data: dto.goles.map((g) => ({
+          partidoId,
+          jugadorId: g.jugadorId,
+          minuto: g.minuto ?? null,
+          tipo: g.tipo ?? 'normal',
+        })),
+      });
+    }
+
+    const golesCreados = await this.prisma.golPartido.findMany({
+      where: { partidoId },
+      include: { jugador: { select: { id: true, nombre: true, dorsal: true } } },
+      orderBy: { minuto: 'asc' },
+    });
+
+    return {
+      message: `${golesCreados.length} gol(es) cargados para ${partido.local.nombre} vs ${partido.visitante.nombre}.`,
+      partidoId,
+      goles: golesCreados,
+    };
+  }
+
+  private async recalcularPuntos(
+    partidoId: number,
+    golesLocalReal: number,
+    golesVisitanteReal: number,
+  ) {
+    try {
+      await this.prisma.$transaction(async (tx) => {
+        const pronosticos = await tx.pronosticoPartido.findMany({
+          where: { partidoId },
+        });
+
+        for (const pronostico of pronosticos) {
+          const puntos = this.calcularPuntos(
+            pronostico.prediccionLocal,
+            pronostico.prediccionVisitante,
+            golesLocalReal,
+            golesVisitanteReal,
+          );
+
+          await tx.pronosticoPartido.update({
+            where: { id: pronostico.id },
+            data: { puntosGanados: puntos },
+          });
+        }
+
+        const usuarios = await tx.pronosticoPartido.groupBy({
+          by: ['usuarioId'],
+          where: { partidoId },
+        });
+
+        for (const { usuarioId } of usuarios) {
+          const totalPuntos = await tx.pronosticoPartido.aggregate({
+            where: { usuarioId },
+            _sum: { puntosGanados: true },
+          });
+
+          await tx.usuario.update({
+            where: { id: usuarioId },
+            data: { puntosTotales: totalPuntos._sum.puntosGanados ?? 0 },
+          });
+        }
+      }, { timeout: 30000 });
+    } catch (error) {
+      throw new InternalServerErrorException(
+        'Error al recalcular puntos. Transacción revertida.',
+      );
+    }
+  }
+
+  private calcularPuntos(
+    predLocal: number,
+    predVisitante: number,
+    realLocal: number,
+    realVisitante: number,
+  ): number {
+    if (predLocal === realLocal && predVisitante === realVisitante) {
+      return 5;
+    }
+
+    const resultadoPred = Math.sign(predLocal - predVisitante);
+    const resultadoReal = Math.sign(realLocal - realVisitante);
+
+    if (resultadoPred === resultadoReal) {
+      return 3;
+    }
+
+    return 0;
   }
 }
