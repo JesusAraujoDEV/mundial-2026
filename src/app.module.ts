@@ -7,6 +7,7 @@ import { RankingModule } from './ranking/ranking.module';
 import { GruposModule } from './grupos/grupos.module';
 import { EstadisticasModule } from './estadisticas/estadisticas.module';
 import { DatosModule } from './datos/datos.module';
+import { PrediccionesEspecialesModule } from './predicciones/predicciones-especiales.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { DatosModule } from './datos/datos.module';
     GruposModule,
     EstadisticasModule,
     DatosModule,
+    PrediccionesEspecialesModule,
   ],
 })
 export class AppModule {}
