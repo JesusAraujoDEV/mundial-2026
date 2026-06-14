@@ -66,6 +66,9 @@ COPY --from=builder /app/dist ./dist
 COPY entrypoint.sh ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
 
+# Dar permisos al usuario nestjs sobre todo /app
+RUN chown -R nestjs:nodejs /app
+
 # Cambiar a usuario no-root
 USER nestjs
 
