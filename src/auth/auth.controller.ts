@@ -1,9 +1,10 @@
-import { Controller, Post, Get, Body, UseGuards, Request } from '@nestjs/common';
+import { Controller, Post, Get, Patch, Body, UseGuards, Request } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { CrearUsuarioDto } from './dto/crear-usuario.dto';
+import { CambiarPasswordDto } from './dto/cambiar-password.dto';
 
 @ApiTags('auth')
 @Controller('mundial/auth')
@@ -50,5 +51,16 @@ export class AuthController {
   @ApiResponse({ status: 401, description: 'No autorizado.' })
   obtenerPerfil(@Request() req: any) {
     return this.authService.obtenerPerfil(req.user.sub);
+  }
+
+  @Patch('cambiar-password')
+  @ApiOperation({
+    summary: 'Cambiar contraseña de un usuario',
+    description: 'Cambia la contraseña de un usuario directamente por su ID.',
+  })
+  @ApiResponse({ status: 200, description: 'Contraseña actualizada.' })
+  @ApiResponse({ status: 404, description: 'Usuario no encontrado.' })
+  cambiarPassword(@Body() dto: CambiarPasswordDto) {
+    return this.authService.cambiarPassword(dto);
   }
 }
