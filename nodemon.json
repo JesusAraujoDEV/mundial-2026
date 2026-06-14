@@ -2,5 +2,6 @@
   "watch": ["src"],
   "ext": "ts",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "npx nest build && node dist/main"
+  "exec": "npm run dev:rebuild",
+  "delay": "1500"
 }
