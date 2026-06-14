@@ -19,18 +19,20 @@ export class DatosService {
   }
 
   async obtenerJugadores(paisId?: number, q?: string) {
-    const where: any = {};
+    const conditions: any[] = [];
 
     if (paisId) {
-      where.paisId = paisId;
+      conditions.push({ paisId });
     }
 
-    if (q) {
-      where.nombre = { contains: q, mode: 'insensitive' };
+    if (q && q.trim().length > 0) {
+      conditions.push({ nombre: { contains: q.trim(), mode: 'insensitive' } });
     }
+
+    const where = conditions.length > 0 ? { AND: conditions } : undefined;
 
     const jugadores = await this.prisma.jugador.findMany({
-      where: Object.keys(where).length > 0 ? where : undefined,
+      where,
       include: {
         pais: { select: { id: true, nombre: true, banderaUrl: true } },
       },
