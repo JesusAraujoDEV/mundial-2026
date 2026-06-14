@@ -19,13 +19,17 @@ export class DatosController {
 
   @Get('jugadores')
   @ApiOperation({
-    summary: 'Listar jugadores',
-    description: 'Retorna todos los jugadores. Se puede filtrar por país usando el query param paisId.',
+    summary: 'Listar y buscar jugadores',
+    description: 'Retorna jugadores. Filtrable por paisId y/o búsqueda parcial por nombre con q.',
   })
   @ApiQuery({ name: 'paisId', required: false, type: Number, description: 'Filtrar por ID de país' })
+  @ApiQuery({ name: 'q', required: false, type: String, description: 'Buscar por nombre parcial del jugador' })
   @ApiResponse({ status: 200, description: 'Lista de jugadores.' })
-  obtenerJugadores(@Query('paisId') paisId?: string) {
-    return this.datosService.obtenerJugadores(paisId ? parseInt(paisId, 10) : undefined);
+  obtenerJugadores(@Query('paisId') paisId?: string, @Query('q') q?: string) {
+    return this.datosService.obtenerJugadores(
+      paisId ? parseInt(paisId, 10) : undefined,
+      q,
+    );
   }
 
   @Get('partidos')
