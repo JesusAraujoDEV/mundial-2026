@@ -1,5 +1,5 @@
-import { Controller, Get, Query } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiQuery } from '@nestjs/swagger';
+import { Controller, Get, Param, ParseIntPipe, Query } from '@nestjs/common';
+import { ApiTags, ApiOperation, ApiResponse, ApiQuery, ApiParam } from '@nestjs/swagger';
 import { DatosService } from './datos.service';
 
 @ApiTags('datos')
@@ -41,5 +41,16 @@ export class DatosController {
   @ApiResponse({ status: 200, description: 'Lista de partidos.' })
   obtenerPartidos(@Query('fase') fase?: string) {
     return this.datosService.obtenerPartidos(fase);
+  }
+
+  @Get('partido/:id/goles')
+  @ApiOperation({
+    summary: 'Obtener goles de un partido',
+    description: 'Retorna la lista de goles registrados para un partido específico.',
+  })
+  @ApiParam({ name: 'id', type: Number, description: 'ID del partido' })
+  @ApiResponse({ status: 200, description: 'Lista de goles del partido.' })
+  obtenerGolesPartido(@Param('id', ParseIntPipe) id: number) {
+    return this.datosService.obtenerGolesPartido(id);
   }
 }

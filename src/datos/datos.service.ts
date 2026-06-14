@@ -54,4 +54,24 @@ export class DatosService {
 
     return { partidos, total: partidos.length };
   }
+
+  async obtenerGolesPartido(partidoId: number) {
+    const goles = await this.prisma.golPartido.findMany({
+      where: { partidoId },
+      include: {
+        jugador: {
+          select: {
+            id: true,
+            nombre: true,
+            dorsal: true,
+            posicion: true,
+            pais: { select: { id: true, nombre: true, banderaUrl: true } },
+          },
+        },
+      },
+      orderBy: { minuto: 'asc' },
+    });
+
+    return { goles, total: goles.length };
+  }
 }
