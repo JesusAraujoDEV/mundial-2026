@@ -72,6 +72,7 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
       const paises = await this.mapaPaises();
       let golesEmitidos = 0;
       let partidosActualizados = 0;
+      let fechasActualizadas = 0;
 
       for (const m of matches) {
         if (m.stage !== 'GROUP_STAGE') continue; // knockout = placeholders en DB
@@ -86,6 +87,18 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
           where: { localId: localP.id, visitanteId: visitanteP.id, fase: 'grupos' },
         });
         if (!partido) continue;
+
+        // Sincronizar la fecha real (kickoff) para countdown/minuto/día exactos.
+        if (m.utcDate) {
+          const apiFecha = new Date(m.utcDate);
+          if (partido.fecha.getTime() !== apiFecha.getTime()) {
+            await this.prisma.partido.update({
+              where: { id: partido.id },
+              data: { fecha: apiFecha },
+            });
+            fechasActualizadas++;
+          }
+        }
 
         const estado = mapEstado(m.status);
         // Sin datos de marcador todavía -> no tocar.
@@ -146,12 +159,12 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
         partidosActualizados++;
       }
 
-      if (partidosActualizados > 0 || golesEmitidos > 0) {
+      if (partidosActualizados > 0 || golesEmitidos > 0 || fechasActualizadas > 0) {
         this.logger.log(
-          `Live-sync: ${partidosActualizados} partidos, ${golesEmitidos} goles emitidos.`,
+          `Live-sync: ${partidosActualizados} partidos, ${golesEmitidos} goles, ${fechasActualizadas} fechas.`,
         );
       }
-      return { partidosActualizados, golesEmitidos };
+      return { partidosActualizados, golesEmitidos, fechasActualizadas };
     } finally {
       this.running = false;
     }
