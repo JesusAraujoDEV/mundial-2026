@@ -5,9 +5,10 @@ import { FootballDataController } from './football-data.controller';
 import { RealtimeModule } from '../realtime/realtime.module';
 import { AdminModule } from '../admin/admin.module';
 import { FotosModule } from '../fotos/fotos.module';
+import { NotificacionesModule } from '../notificaciones/notificaciones.module';
 
 @Module({
-  imports: [RealtimeModule, AdminModule, FotosModule],
+  imports: [RealtimeModule, AdminModule, FotosModule, NotificacionesModule],
   controllers: [FootballDataController],
   providers: [FootballDataService, LiveSyncService],
   exports: [FootballDataService, LiveSyncService],

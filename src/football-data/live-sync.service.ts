@@ -9,6 +9,7 @@ import { RealtimeService } from '../realtime/realtime.service';
 import { AdminService } from '../admin/admin.service';
 import { FootballDataService } from './football-data.service';
 import { FotosService } from '../fotos/fotos.service';
+import { NotificacionesService } from '../notificaciones/notificaciones.service';
 import { FD_TEAM_TO_PAIS, mapEstado } from './football-data.constants';
 
 /**
@@ -30,6 +31,7 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
     private readonly realtime: RealtimeService,
     private readonly admin: AdminService,
     private readonly fotos: FotosService,
+    private readonly notif: NotificacionesService,
   ) {}
 
   onModuleInit() {
@@ -125,7 +127,7 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
           const p = equipo === 'local' ? localP : visitanteP;
           const nombre = equipo === 'local' ? localNombre : visitanteNombre;
           for (let i = 0; i < delta; i++) {
-            this.realtime.emitGoal({
+            const golPayload = {
               partidoId: partido.id,
               equipo,
               paisId: p.id,
@@ -139,7 +141,13 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
               golesVisitante: marcadorV,
               localNombre,
               visitanteNombre,
-            });
+            };
+            this.realtime.emitGoal(golPayload);
+            void this.notif
+              .notificarGol(golPayload)
+              .catch((e) =>
+                this.logger.warn(`Notificación de gol falló: ${e.message}`),
+              );
             golesEmitidos++;
           }
         };

@@ -1,5 +1,6 @@
 import {
   Injectable,
+  Logger,
   NotFoundException,
   BadRequestException,
   InternalServerErrorException,
@@ -10,14 +11,28 @@ import { ActualizarPartidoDto } from './dto/actualizar-partido.dto';
 import { CargarGolesDto } from './dto/cargar-goles.dto';
 import { AgregarGolDto } from './dto/agregar-gol.dto';
 import { RealtimeService } from '../realtime/realtime.service';
-import { EstadoPartido } from '../realtime/realtime.events';
+import { EstadoPartido, MatchGoalPayload } from '../realtime/realtime.events';
+import { NotificacionesService } from '../notificaciones/notificaciones.service';
 
 @Injectable()
 export class AdminService {
+  private readonly logger = new Logger(AdminService.name);
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly realtime: RealtimeService,
+    private readonly notif: NotificacionesService,
   ) {}
+
+  /** Emite el efecto de gol y lanza el aviso de WhatsApp (fire-and-forget). */
+  private dispararGol(payload: MatchGoalPayload) {
+    this.realtime.emitGoal(payload);
+    void this.notif
+      .notificarGol(payload)
+      .catch((e) =>
+        this.logger.warn(`Notificación de gol falló: ${e.message}`),
+      );
+  }
 
   async cargarPais(dto: CargarPaisDto) {
     const pais = await this.prisma.pais.upsert({
@@ -112,6 +127,18 @@ export class AdminService {
       if (partidoActualizado.grupo) {
         this.realtime.emitGroupsUpdated();
       }
+    }
+
+    // Aviso de fin de partido cuando transiciona a 'finalizado' (admin o live-sync).
+    if (
+      partido.estado !== 'finalizado' &&
+      partidoActualizado.estado === 'finalizado'
+    ) {
+      void this.notif
+        .notificarFinPartido(id)
+        .catch((e) =>
+          this.logger.warn(`Notificación de fin de partido falló: ${e.message}`),
+        );
     }
 
     return {
@@ -424,7 +451,7 @@ export class AdminService {
       const eq = equipoDeGol(g);
       if (!eq) continue; // no se puede atribuir -> no animar (pero queda guardado)
       const paisDelGol = eq === 'local' ? partido.local : partido.visitante;
-      this.realtime.emitGoal({
+      this.dispararGol({
         partidoId,
         equipo: eq,
         paisId: paisDelGol.id,
@@ -519,7 +546,7 @@ export class AdminService {
     const eq = this.equipoDeGolPartido(partido, golCreado);
     if (eq) {
       const paisDelGol = eq === 'local' ? partido.local : partido.visitante;
-      this.realtime.emitGoal({
+      this.dispararGol({
         partidoId,
         equipo: eq,
         paisId: paisDelGol.id,

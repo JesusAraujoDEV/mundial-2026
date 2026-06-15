@@ -11,6 +11,7 @@ import { RealtimeModule } from './realtime/realtime.module';
 import { FootballDataModule } from './football-data/football-data.module';
 import { PrediccionesEspecialesModule } from './predicciones/predicciones-especiales.module';
 import { FotosModule } from './fotos/fotos.module';
+import { NotificacionesModule } from './notificaciones/notificaciones.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { FotosModule } from './fotos/fotos.module';
     FootballDataModule,
     PrediccionesEspecialesModule,
     FotosModule,
+    NotificacionesModule,
   ],
 })
 export class AppModule {}
