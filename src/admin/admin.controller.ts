@@ -1,9 +1,18 @@
-import { Controller, Post, Put, Body, Param, ParseIntPipe } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Put,
+  Delete,
+  Body,
+  Param,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
 import { AdminService } from './admin.service';
 import { CargarPaisDto } from './dto/cargar-pais.dto';
 import { ActualizarPartidoDto } from './dto/actualizar-partido.dto';
 import { CargarGolesDto } from './dto/cargar-goles.dto';
+import { AgregarGolDto } from './dto/agregar-gol.dto';
 
 @ApiTags('admin')
 @Controller('mundial/admin')
@@ -74,5 +83,34 @@ export class AdminController {
     @Body() dto: CargarGolesDto,
   ) {
     return this.adminService.cargarGoles(id, dto);
+  }
+
+  @Post('partido/:id/gol')
+  @ApiOperation({
+    summary: 'Registrar UN gol en vivo (dispara el efecto)',
+    description:
+      'Añade un gol individual a un partido. El marcador se actualiza solo a partir de los goles, se recalculan puntos y grupos, y se emite el efecto de gol en tiempo real a todos los clientes.',
+  })
+  @ApiParam({ name: 'id', type: Number, description: 'ID del partido' })
+  @ApiResponse({ status: 201, description: 'Gol registrado y efecto emitido.' })
+  @ApiResponse({ status: 404, description: 'Partido o jugador no encontrado.' })
+  agregarGol(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() dto: AgregarGolDto,
+  ) {
+    return this.adminService.agregarGol(id, dto);
+  }
+
+  @Delete('gol/:golId')
+  @ApiOperation({
+    summary: 'Eliminar un gol (editar marcador en vivo)',
+    description:
+      'Elimina un gol; el marcador se recalcula automáticamente y se emiten las actualizaciones en tiempo real.',
+  })
+  @ApiParam({ name: 'golId', type: Number, description: 'ID del gol' })
+  @ApiResponse({ status: 200, description: 'Gol eliminado y marcador recalculado.' })
+  @ApiResponse({ status: 404, description: 'Gol no encontrado.' })
+  eliminarGol(@Param('golId', ParseIntPipe) golId: number) {
+    return this.adminService.eliminarGol(golId);
   }
 }

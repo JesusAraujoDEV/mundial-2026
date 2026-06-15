@@ -7,6 +7,8 @@ import { RankingModule } from './ranking/ranking.module';
 import { GruposModule } from './grupos/grupos.module';
 import { EstadisticasModule } from './estadisticas/estadisticas.module';
 import { DatosModule } from './datos/datos.module';
+import { RealtimeModule } from './realtime/realtime.module';
+import { FootballDataModule } from './football-data/football-data.module';
 
 @Module({
   imports: [
@@ -18,6 +20,8 @@ import { DatosModule } from './datos/datos.module';
     GruposModule,
     EstadisticasModule,
     DatosModule,
+    RealtimeModule,
+    FootballDataModule,
   ],
 })
 export class AppModule {}

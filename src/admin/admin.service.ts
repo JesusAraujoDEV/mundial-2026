@@ -1,16 +1,23 @@
 import {
   Injectable,
   NotFoundException,
+  BadRequestException,
   InternalServerErrorException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CargarPaisDto } from './dto/cargar-pais.dto';
 import { ActualizarPartidoDto } from './dto/actualizar-partido.dto';
 import { CargarGolesDto } from './dto/cargar-goles.dto';
+import { AgregarGolDto } from './dto/agregar-gol.dto';
+import { RealtimeService } from '../realtime/realtime.service';
+import { EstadoPartido } from '../realtime/realtime.events';
 
 @Injectable()
 export class AdminService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly realtime: RealtimeService,
+  ) {}
 
   async cargarPais(dto: CargarPaisDto) {
     const pais = await this.prisma.pais.upsert({
@@ -57,6 +64,14 @@ export class AdminService {
     const actualizarMarcador =
       dto.golesLocal !== undefined && dto.golesVisitante !== undefined;
 
+    // Estado: explícito por DTO; si no, un marcador nuevo sobre un partido
+    // 'programado' implica que arrancó -> 'en_vivo'.
+    const estado: EstadoPartido | undefined =
+      (dto.estado as EstadoPartido | undefined) ??
+      (actualizarMarcador && partido.estado === 'programado'
+        ? 'en_vivo'
+        : undefined);
+
     const partidoActualizado = await this.prisma.partido.update({
       where: { id },
       data: {
@@ -65,6 +80,7 @@ export class AdminService {
           golesVisitante: dto.golesVisitante,
         }),
         ...(dto.bloqueado !== undefined && { bloqueado: dto.bloqueado }),
+        ...(estado !== undefined && { estado }),
         ...(actualizarMarcador && { actualizadoPorAdmin: true }),
       },
     });
@@ -80,6 +96,21 @@ export class AdminService {
           dto.golesLocal!,
           dto.golesVisitante!,
         );
+      }
+    }
+
+    // ── Emisiones real-time (post-commit) ──
+    this.realtime.emitMatchUpdate({
+      partidoId: partidoActualizado.id,
+      golesLocal: partidoActualizado.golesLocal,
+      golesVisitante: partidoActualizado.golesVisitante,
+      estado: partidoActualizado.estado as EstadoPartido,
+      bloqueado: partidoActualizado.bloqueado,
+    });
+    if (actualizarMarcador) {
+      this.realtime.emitRankingUpdated();
+      if (partidoActualizado.grupo) {
+        this.realtime.emitGroupsUpdated();
       }
     }
 
@@ -233,6 +264,8 @@ export class AdminService {
       await this.aplicarStatsGrupo(grupo, partido.visitanteId, gv, gl, resVisitante);
     }
 
+    this.realtime.emitGroupsUpdated();
+
     return {
       message: `Grupos recalculados. ${partidos.length} partidos procesados.`,
       partidosProcesados: partidos.length,
@@ -291,6 +324,8 @@ export class AdminService {
       });
     }
 
+    this.realtime.emitRankingUpdated();
+
     return {
       message: `Recálculo completado. ${pronosticosActualizados} pronósticos actualizados.`,
       partidosEvaluados: partidosConResultado.length,
@@ -311,12 +346,20 @@ export class AdminService {
       throw new NotFoundException(`Partido con ID ${partidoId} no encontrado.`);
     }
 
-    // Eliminar goles anteriores del partido
-    await this.prisma.golPartido.deleteMany({
+    // Snapshot de goles previos para detectar los NUEVOS (multiset por firma).
+    const golesPrevios = await this.prisma.golPartido.findMany({
       where: { partidoId },
     });
+    const firma = (g: { jugadorId: number; minuto: number | null; tipo: string }) =>
+      `${g.jugadorId}|${g.minuto ?? ''}|${g.tipo}`;
+    const conteoPrevio = new Map<string, number>();
+    for (const g of golesPrevios) {
+      const k = firma(g);
+      conteoPrevio.set(k, (conteoPrevio.get(k) ?? 0) + 1);
+    }
 
-    // Insertar los nuevos goles
+    // Reemplazar goles
+    await this.prisma.golPartido.deleteMany({ where: { partidoId } });
     if (dto.goles.length > 0) {
       await this.prisma.golPartido.createMany({
         data: dto.goles.map((g) => ({
@@ -330,8 +373,81 @@ export class AdminService {
 
     const golesCreados = await this.prisma.golPartido.findMany({
       where: { partidoId },
-      include: { jugador: { select: { id: true, nombre: true, dorsal: true } } },
-      orderBy: { minuto: 'asc' },
+      include: {
+        jugador: { select: { id: true, nombre: true, dorsal: true, paisId: true } },
+      },
+      orderBy: [{ minuto: 'asc' }, { id: 'asc' }],
+    });
+
+    // Marcador derivado de la lista (respeta autogol -> suma al rival).
+    const equipoDeGol = (g: (typeof golesCreados)[number]): 'local' | 'visitante' | null => {
+      const paisJugador = g.jugador.paisId;
+      const beneficiado =
+        g.tipo === 'autogol'
+          ? paisJugador === partido.localId
+            ? partido.visitanteId
+            : partido.localId
+          : paisJugador;
+      if (beneficiado === partido.localId) return 'local';
+      if (beneficiado === partido.visitanteId) return 'visitante';
+      return null; // dato inconsistente: jugador no pertenece a ningún equipo del partido
+    };
+    let derivLocal = 0;
+    let derivVisitante = 0;
+    for (const g of golesCreados) {
+      const eq = equipoDeGol(g);
+      if (eq === 'local') derivLocal++;
+      else if (eq === 'visitante') derivVisitante++;
+    }
+    const marcadorLocal = partido.golesLocal ?? derivLocal;
+    const marcadorVisitante = partido.golesVisitante ?? derivVisitante;
+
+    // Un gol registrado implica que el partido arrancó.
+    let estado = partido.estado as EstadoPartido;
+    if (estado === 'programado' && golesCreados.length > 0) {
+      estado = 'en_vivo';
+      await this.prisma.partido.update({
+        where: { id: partidoId },
+        data: { estado },
+      });
+    }
+
+    // ── Emitir animación por cada gol NUEVO ──
+    const conteoRestante = new Map(conteoPrevio);
+    for (const g of golesCreados) {
+      const k = firma(g);
+      const restante = conteoRestante.get(k) ?? 0;
+      if (restante > 0) {
+        conteoRestante.set(k, restante - 1); // ya existía, no es nuevo
+        continue;
+      }
+      const eq = equipoDeGol(g);
+      if (!eq) continue; // no se puede atribuir -> no animar (pero queda guardado)
+      const paisDelGol = eq === 'local' ? partido.local : partido.visitante;
+      this.realtime.emitGoal({
+        partidoId,
+        equipo: eq,
+        paisId: paisDelGol.id,
+        paisNombre: paisDelGol.nombre,
+        paisEscudo: paisDelGol.banderaUrl ?? null,
+        jugador: g.jugador.nombre,
+        jugadorId: g.jugador.id,
+        minuto: g.minuto,
+        tipo: g.tipo,
+        golesLocal: marcadorLocal,
+        golesVisitante: marcadorVisitante,
+        localNombre: partido.local.nombre,
+        visitanteNombre: partido.visitante.nombre,
+      });
+    }
+
+    // Señal de cambio del partido (estado / goleadores).
+    this.realtime.emitMatchUpdate({
+      partidoId,
+      golesLocal: partido.golesLocal,
+      golesVisitante: partido.golesVisitante,
+      estado,
+      bloqueado: partido.bloqueado,
     });
 
     return {
@@ -339,6 +455,130 @@ export class AdminService {
       partidoId,
       goles: golesCreados,
     };
+  }
+
+  /** Equipo al que cuenta un gol (autogol cuenta al rival). null si no aplica. */
+  private equipoDeGolPartido(
+    partido: { localId: number; visitanteId: number },
+    gol: { tipo: string; jugador: { paisId: number } },
+  ): 'local' | 'visitante' | null {
+    const paisJugador = gol.jugador.paisId;
+    const beneficiado =
+      gol.tipo === 'autogol'
+        ? paisJugador === partido.localId
+          ? partido.visitanteId
+          : partido.localId
+        : paisJugador;
+    if (beneficiado === partido.localId) return 'local';
+    if (beneficiado === partido.visitanteId) return 'visitante';
+    return null;
+  }
+
+  /**
+   * Registra UN goleador (jugador + minuto) y dispara el efecto de gol.
+   * NO toca el marcador: lo controla football-data (live-sync).
+   */
+  async agregarGol(partidoId: number, dto: AgregarGolDto) {
+    const partido = await this.prisma.partido.findUnique({
+      where: { id: partidoId },
+      include: { local: true, visitante: true },
+    });
+    if (!partido) {
+      throw new NotFoundException(`Partido con ID ${partidoId} no encontrado.`);
+    }
+
+    const jugador = await this.prisma.jugador.findUnique({
+      where: { id: dto.jugadorId },
+    });
+    if (!jugador) {
+      throw new NotFoundException(`Jugador con ID ${dto.jugadorId} no encontrado.`);
+    }
+    if (jugador.paisId !== partido.localId && jugador.paisId !== partido.visitanteId) {
+      throw new BadRequestException(
+        'El jugador no pertenece a ninguno de los dos equipos del partido.',
+      );
+    }
+
+    const golCreado = await this.prisma.golPartido.create({
+      data: {
+        partidoId,
+        jugadorId: dto.jugadorId,
+        minuto: dto.minuto ?? null,
+        tipo: dto.tipo ?? 'normal',
+      },
+      include: {
+        jugador: { select: { id: true, nombre: true, dorsal: true, paisId: true } },
+      },
+    });
+
+    // El MARCADOR lo controla football-data (live-sync); aquí solo registramos
+    // el goleador y disparamos el efecto con el marcador actual de la DB.
+    const marcadorLocal = partido.golesLocal ?? 0;
+    const marcadorVisitante = partido.golesVisitante ?? 0;
+
+    const eq = this.equipoDeGolPartido(partido, golCreado);
+    if (eq) {
+      const paisDelGol = eq === 'local' ? partido.local : partido.visitante;
+      this.realtime.emitGoal({
+        partidoId,
+        equipo: eq,
+        paisId: paisDelGol.id,
+        paisNombre: paisDelGol.nombre,
+        paisEscudo: paisDelGol.banderaUrl ?? null,
+        jugador: golCreado.jugador.nombre,
+        jugadorId: golCreado.jugador.id,
+        minuto: golCreado.minuto,
+        tipo: golCreado.tipo,
+        golesLocal: marcadorLocal,
+        golesVisitante: marcadorVisitante,
+        localNombre: partido.local.nombre,
+        visitanteNombre: partido.visitante.nombre,
+      });
+    }
+    // Refresca listas de goleadores en los clientes (sin tocar marcador/puntos).
+    this.realtime.emitMatchUpdate({
+      partidoId,
+      golesLocal: partido.golesLocal,
+      golesVisitante: partido.golesVisitante,
+      estado: partido.estado as EstadoPartido,
+      bloqueado: partido.bloqueado,
+    });
+
+    return {
+      message: `Goleador registrado para ${partido.local.nombre} vs ${partido.visitante.nombre}.`,
+      gol: golCreado,
+    };
+  }
+
+  /**
+   * Elimina (edita) un gol. Recalcula el marcador derivado, puntos y grupos,
+   * y emite la actualización (sin efecto de gol).
+   */
+  async eliminarGol(golId: number) {
+    const gol = await this.prisma.golPartido.findUnique({ where: { id: golId } });
+    if (!gol) {
+      throw new NotFoundException(`Gol con ID ${golId} no encontrado.`);
+    }
+    const partido = await this.prisma.partido.findUnique({
+      where: { id: gol.partidoId },
+      include: { local: true, visitante: true },
+    });
+    if (!partido) {
+      throw new NotFoundException(`Partido del gol no encontrado.`);
+    }
+
+    await this.prisma.golPartido.delete({ where: { id: golId } });
+
+    // El marcador lo controla football-data; solo refrescamos las listas.
+    this.realtime.emitMatchUpdate({
+      partidoId: partido.id,
+      golesLocal: partido.golesLocal,
+      golesVisitante: partido.golesVisitante,
+      estado: partido.estado as EstadoPartido,
+      bloqueado: partido.bloqueado,
+    });
+
+    return { message: `Gol ${golId} eliminado.` };
   }
 
   private async recalcularPuntos(

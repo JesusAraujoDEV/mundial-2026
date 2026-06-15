@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsOptional, IsInt, IsBoolean, Min } from 'class-validator';
+import { IsOptional, IsInt, IsBoolean, Min, IsIn, IsString } from 'class-validator';
 
 export class ActualizarPartidoDto {
   @ApiProperty({
@@ -30,4 +30,14 @@ export class ActualizarPartidoDto {
   @IsOptional()
   @IsBoolean()
   bloqueado?: boolean;
+
+  @ApiProperty({
+    example: 'en_vivo',
+    description: 'Estado del partido: programado | en_vivo | finalizado',
+    required: false,
+  })
+  @IsOptional()
+  @IsString()
+  @IsIn(['programado', 'en_vivo', 'finalizado'])
+  estado?: string;
 }
