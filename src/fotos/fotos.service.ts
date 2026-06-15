@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 
-const BASE = `https://www.thesportsdb.com/api/v1/json/${process.env.THESPORTSDB_KEY || '3'}`;
+const BASE = `https://www.thesportsdb.com/api/v1/json/${process.env.THESPORTSDB_KEY || '123'}`;
 
 /**
  * Fotos de jugadores desde TheSportsDB (gratis). Devuelve el "cutout" (recorte
