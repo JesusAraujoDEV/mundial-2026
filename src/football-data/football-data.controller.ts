@@ -37,4 +37,15 @@ export class FootballDataController {
   goleadores(@Query('limit') limit?: string) {
     return this.liveSync.obtenerGoleadores(limit ? Number(limit) : 20);
   }
+
+  @Get('estadisticas/fifa-resumen')
+  @ApiOperation({
+    summary: 'Resumen estadístico del Mundial (football-data)',
+    description:
+      'Selecciones por GF/GC/DG, partidos con más goles y resumen del torneo, calculado desde los marcadores reales.',
+  })
+  @ApiResponse({ status: 200, description: 'Resumen de estadísticas.' })
+  resumenFifa() {
+    return this.liveSync.obtenerResumenFifa();
+  }
 }

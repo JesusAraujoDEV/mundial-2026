@@ -210,4 +210,67 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
       asistencias: s.assists ?? 0,
     }));
   }
+
+  /** Estadísticas agregadas del Mundial calculadas desde los marcadores reales. */
+  async obtenerResumenFifa() {
+    const matches = await this.fd.getWcMatches();
+    const jugados = matches.filter(
+      (m) =>
+        m.score.fullTime.home != null &&
+        m.score.fullTime.away != null &&
+        (m.status === 'FINISHED' || m.status === 'IN_PLAY' || m.status === 'PAUSED' || m.status === 'AWARDED'),
+    );
+
+    type Sel = { pais: string; escudo: string | null; pj: number; gf: number; gc: number };
+    const sel = new Map<number, Sel>();
+    const add = (team: { id: number; name: string; crest: string }, gf: number, gc: number) => {
+      const pais = FD_TEAM_TO_PAIS[team.id] ?? team.name;
+      const cur = sel.get(team.id) ?? { pais, escudo: team.crest ?? null, pj: 0, gf: 0, gc: 0 };
+      cur.pj += 1; cur.gf += gf; cur.gc += gc;
+      sel.set(team.id, cur);
+    };
+
+    let totalGoles = 0;
+    let partidosConGoles = 0;
+    let mayor: { local: string; visitante: string; golesLocal: number; golesVisitante: number; total: number } | null = null;
+    const partidosScored = jugados.map((m) => {
+      const gl = m.score.fullTime.home!;
+      const gv = m.score.fullTime.away!;
+      add(m.homeTeam, gl, gv);
+      add(m.awayTeam, gv, gl);
+      totalGoles += gl + gv;
+      if (gl + gv > 0) partidosConGoles += 1;
+      const row = {
+        local: FD_TEAM_TO_PAIS[m.homeTeam.id] ?? m.homeTeam.name,
+        localEscudo: m.homeTeam.crest ?? null,
+        visitante: FD_TEAM_TO_PAIS[m.awayTeam.id] ?? m.awayTeam.name,
+        visitanteEscudo: m.awayTeam.crest ?? null,
+        golesLocal: gl,
+        golesVisitante: gv,
+        total: gl + gv,
+      };
+      if (!mayor || Math.abs(gl - gv) > Math.abs(mayor.golesLocal - mayor.golesVisitante)) {
+        mayor = { local: row.local, visitante: row.visitante, golesLocal: gl, golesVisitante: gv, total: gl + gv };
+      }
+      return row;
+    });
+
+    const selecciones = [...sel.values()]
+      .map((s) => ({ ...s, dg: s.gf - s.gc }))
+      .sort((a, b) => b.gf - a.gf || b.dg - a.dg);
+
+    const topPartidos = partidosScored.sort((a, b) => b.total - a.total).slice(0, 6);
+
+    return {
+      resumen: {
+        partidosJugados: jugados.length,
+        totalGoles,
+        promedioGoles: jugados.length ? +(totalGoles / jugados.length).toFixed(2) : 0,
+        partidosConGoles,
+        mayorGoleada: mayor,
+      },
+      selecciones,
+      topPartidos,
+    };
+  }
 }
