@@ -82,12 +82,16 @@ export class GruposService {
     const { grupos } = await this.obtenerGrupos();
     const { mejoresTerceros } = await this.obtenerMejoresTerceros();
 
-    const posiciones = new Map<string, string | null>();
+    type EquipoLlave = { nombre: string; banderaUrl: string | null };
+    const posiciones = new Map<string, EquipoLlave | null>();
 
     for (const grupo of grupos) {
       const letra = grupo.grupo;
-      posiciones.set(`1${letra}`, grupo.equipos[0]?.nombre ?? null);
-      posiciones.set(`2${letra}`, grupo.equipos[1]?.nombre ?? null);
+      // Solo se considera "clasificado" (con bandera) si el grupo ya jugó algo.
+      const e1 = grupo.equipos[0];
+      const e2 = grupo.equipos[1];
+      posiciones.set(`1${letra}`, e1 && e1.partidosJugados > 0 ? { nombre: e1.nombre, banderaUrl: e1.banderaUrl } : null);
+      posiciones.set(`2${letra}`, e2 && e2.partidosJugados > 0 ? { nombre: e2.nombre, banderaUrl: e2.banderaUrl } : null);
     }
 
     const tercerosClasificados = mejoresTerceros
@@ -142,7 +146,7 @@ export class GruposService {
    * Mapa de cruces: 1° y 2° de cada grupo + 8 mejores terceros.
    */
   private generarDieciseisavos(
-    posiciones: Map<string, string | null>,
+    posiciones: Map<string, { nombre: string; banderaUrl: string | null } | null>,
     tercerosMap: Map<string, string | null>,
     crucesAsignados: Record<string, string | null>,
   ) {
@@ -207,12 +211,15 @@ export class GruposService {
   }
 
   private formatearPartidoPlayoff(partido: any) {
+    // Los cruces de octavos en adelante dependen de quién gane las rondas
+    // previas: hasta que no estén definidos, se muestran como "Por definir"
+    // (los partidos en DB son placeholders de la siembra, no equipos reales).
     return {
       partidoId: partido.id,
       fase: partido.fase,
       fecha: partido.fecha,
-      local: partido.local,
-      visitante: partido.visitante,
+      local: null,
+      visitante: null,
       resultado:
         partido.golesLocal !== null && partido.golesVisitante !== null
           ? { golesLocal: partido.golesLocal, golesVisitante: partido.golesVisitante }
