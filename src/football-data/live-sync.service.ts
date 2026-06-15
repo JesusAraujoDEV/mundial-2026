@@ -219,6 +219,29 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
     }));
   }
 
+  /** Tabla de posiciones real (W/D/L, pts, GF/GA/GD) aplanada y mapeada a nuestros países. */
+  async obtenerStandings() {
+    const groups = await this.fd.getWcStandings();
+    const filas = groups
+      .filter((g) => g.type === 'TOTAL')
+      .flatMap((g) =>
+        g.table.map((r) => ({
+          grupo: (g.group ?? '').replace('Group ', ''),
+          pais: FD_TEAM_TO_PAIS[r.team.id] ?? r.team.name,
+          escudo: r.team.crest ?? null,
+          pj: r.playedGames,
+          g: r.won,
+          e: r.draw,
+          p: r.lost,
+          pts: r.points,
+          gf: r.goalsFor,
+          gc: r.goalsAgainst,
+          dg: r.goalDifference,
+        })),
+      );
+    return filas;
+  }
+
   /** Estadísticas agregadas del Mundial calculadas desde los marcadores reales. */
   async obtenerResumenFifa() {
     const matches = await this.fd.getWcMatches();

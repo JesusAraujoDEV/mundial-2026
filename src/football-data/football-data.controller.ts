@@ -38,6 +38,13 @@ export class FootballDataController {
     return this.liveSync.obtenerGoleadores(limit ? Number(limit) : 20);
   }
 
+  @Get('estadisticas/standings')
+  @ApiOperation({ summary: 'Tabla de posiciones real (football-data)' })
+  @ApiResponse({ status: 200, description: 'Posiciones por equipo.' })
+  standings() {
+    return this.liveSync.obtenerStandings();
+  }
+
   @Get('estadisticas/fifa-resumen')
   @ApiOperation({
     summary: 'Resumen estadístico del Mundial (football-data)',

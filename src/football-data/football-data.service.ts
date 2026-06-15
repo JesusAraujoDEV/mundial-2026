@@ -94,4 +94,30 @@ export class FootballDataService {
     );
     return data.scorers ?? [];
   }
+
+  async getWcStandings(): Promise<FdStandingGroup[]> {
+    const data = await this.get<{ standings: FdStandingGroup[] }>(
+      `/competitions/${WC_COMPETITION}/standings`,
+      30000,
+    );
+    return data.standings ?? [];
+  }
+}
+
+export interface FdStandingRow {
+  position: number;
+  team: FdTeam;
+  playedGames: number;
+  won: number;
+  draw: number;
+  lost: number;
+  points: number;
+  goalsFor: number;
+  goalsAgainst: number;
+  goalDifference: number;
+}
+export interface FdStandingGroup {
+  type: string;
+  group: string | null;
+  table: FdStandingRow[];
 }
