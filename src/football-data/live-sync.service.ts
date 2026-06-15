@@ -20,6 +20,8 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
   private readonly logger = new Logger(LiveSyncService.name);
   private timer: NodeJS.Timeout | null = null;
   private running = false;
+  /** Último marcador observado por partido EN ESTE PROCESO (para detectar goles en vivo). */
+  private lastScores = new Map<number, { l: number; v: number }>();
 
   constructor(
     private readonly prisma: PrismaService,
@@ -111,15 +113,7 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
         }
         const newL = m.score.fullTime.home ?? 0;
         const newV = m.score.fullTime.away ?? 0;
-        const curL = partido.golesLocal;
-        const curV = partido.golesVisitante;
 
-        const scoreChanged = newL !== curL || newV !== curV;
-        const estadoChanged = estado !== partido.estado;
-        if (!scoreChanged && !estadoChanged) continue;
-
-        // Efecto de gol SOLO cuando ya teníamos un marcador previo conocido
-        // (evita una avalancha de overlays al backfillear partidos ya jugados).
         const emitirGoles = (
           equipo: 'local' | 'visitante',
           delta: number,
@@ -147,16 +141,30 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
             golesEmitidos++;
           }
         };
-        if (curL != null && newL > curL) emitirGoles('local', newL - curL, newL, newV);
-        if (curV != null && newV > curV) emitirGoles('visitante', newV - curV, newL, newV);
 
-        // Aplica marcador/estado + recalcula puntos/grupos + emite match:updated/ranking/grupos.
-        await this.admin.actualizarPartido(partido.id, {
-          golesLocal: newL,
-          golesVisitante: newV,
-          estado,
-        });
-        partidosActualizados++;
+        // Efecto de gol SOLO si: partido EN VIVO + ya teníamos una observación
+        // previa EN ESTE PROCESO (prime) + el marcador subió. Esto evita:
+        //  - overlays de partidos ya finalizados,
+        //  - ráfagas al reiniciar el backend (re-prime, no re-emite).
+        const seen = this.lastScores.get(partido.id);
+        if (estado === 'en_vivo' && seen) {
+          if (newL > seen.l) emitirGoles('local', newL - seen.l, newL, newV);
+          if (newV > seen.v) emitirGoles('visitante', newV - seen.v, newL, newV);
+        }
+        this.lastScores.set(partido.id, { l: newL, v: newV });
+
+        // Persistir marcador/estado (recalcula puntos/grupos + match:updated) si cambió.
+        const scoreChanged =
+          newL !== partido.golesLocal || newV !== partido.golesVisitante;
+        const estadoChanged = estado !== partido.estado;
+        if (scoreChanged || estadoChanged) {
+          await this.admin.actualizarPartido(partido.id, {
+            golesLocal: newL,
+            golesVisitante: newV,
+            estado,
+          });
+          partidosActualizados++;
+        }
       }
 
       if (partidosActualizados > 0 || golesEmitidos > 0 || fechasActualizadas > 0) {

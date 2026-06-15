@@ -40,14 +40,22 @@ export class FootballDataService {
     return process.env.FOOTBALL_DATA_TOKEN || '';
   }
 
-  private async get<T>(path: string): Promise<T> {
+  // Caché por ruta (protege el límite de 10 req/min y permite pollear rápido).
+  private cache = new Map<string, { exp: number; data: unknown }>();
+
+  private async get<T>(path: string, ttlMs = 0): Promise<T> {
     if (!this.token) {
       throw new ServiceUnavailableException('FOOTBALL_DATA_TOKEN no configurado.');
     }
+    const hit = this.cache.get(path);
+    const nowMs = Number(process.hrtime.bigint() / 1000000n);
+    if (hit && hit.exp > nowMs) return hit.data as T;
+
     const res = await fetch(`${FD_BASE}${path}`, {
       headers: { 'X-Auth-Token': this.token },
     });
     if (res.status === 429) {
+      if (hit) return hit.data as T; // si hay caché previa, úsala ante rate-limit
       throw new ServiceUnavailableException(
         'Límite de peticiones de football-data alcanzado (10/min).',
       );
@@ -58,12 +66,15 @@ export class FootballDataService {
         `football-data respondió ${res.status}: ${body.slice(0, 120)}`,
       );
     }
-    return (await res.json()) as T;
+    const data = (await res.json()) as T;
+    if (ttlMs > 0) this.cache.set(path, { exp: nowMs + ttlMs, data });
+    return data;
   }
 
   async getWcMatches(): Promise<FdMatch[]> {
     const data = await this.get<{ matches: FdMatch[] }>(
       `/competitions/${WC_COMPETITION}/matches`,
+      8000, // 8s: suficiente para reusar entre poller y endpoints
     );
     return data.matches ?? [];
   }
@@ -71,6 +82,7 @@ export class FootballDataService {
   async getWcTeams(): Promise<FdTeam[]> {
     const data = await this.get<{ teams: FdTeam[] }>(
       `/competitions/${WC_COMPETITION}/teams`,
+      3600000, // 1h
     );
     return data.teams ?? [];
   }
@@ -78,6 +90,7 @@ export class FootballDataService {
   async getWcScorers(limit = 20): Promise<FdScorer[]> {
     const data = await this.get<{ scorers: FdScorer[] }>(
       `/competitions/${WC_COMPETITION}/scorers?limit=${limit}`,
+      30000, // 30s
     );
     return data.scorers ?? [];
   }
