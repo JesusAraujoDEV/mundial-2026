@@ -47,6 +47,7 @@ model Jugador {
   posicion            String?              @db.VarChar(50)
   dorsal              Int?
   edad                Int?
+  fotoUrl             String?              @map("foto_url") @db.VarChar(500)
   pais                Pais                 @relation(fields: [paisId], references: [id], onDelete: Cascade)
   goles               GolPartido[]
   especialesBalonOro  PrediccionEspecial[] @relation("BalonOro")

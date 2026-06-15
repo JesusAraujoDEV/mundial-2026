@@ -8,6 +8,7 @@ import { PrismaService } from '../prisma/prisma.service';
 import { RealtimeService } from '../realtime/realtime.service';
 import { AdminService } from '../admin/admin.service';
 import { FootballDataService } from './football-data.service';
+import { FotosService } from '../fotos/fotos.service';
 import { FD_TEAM_TO_PAIS, mapEstado } from './football-data.constants';
 
 /**
@@ -28,6 +29,7 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
     private readonly fd: FootballDataService,
     private readonly realtime: RealtimeService,
     private readonly admin: AdminService,
+    private readonly fotos: FotosService,
   ) {}
 
   onModuleInit() {
@@ -208,11 +210,14 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
   /** Goleadores del Mundial mapeados a nuestros nombres de país. */
   async obtenerGoleadores(limit = 20) {
     const scorers = await this.fd.getWcScorers(limit);
+    // Prefetch de fotos en segundo plano (no bloquea la respuesta).
+    this.fotos.prefetch(scorers.map((s) => s.player.name)).catch(() => {});
     return scorers.map((s) => ({
       jugador: s.player.name,
       nacionalidad: s.player.nationality,
       pais: FD_TEAM_TO_PAIS[s.team?.id] ?? s.team?.name,
       paisEscudo: s.team?.crest ?? null,
+      foto: this.fotos.getCached(s.player.name) ?? null,
       goles: s.goals ?? 0,
       partidos: s.playedMatches ?? 0,
       asistencias: s.assists ?? 0,

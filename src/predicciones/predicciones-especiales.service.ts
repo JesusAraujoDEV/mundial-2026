@@ -12,9 +12,9 @@ export class PrediccionesEspecialesService {
       include: {
         campeon: { select: { id: true, nombre: true, banderaUrl: true } },
         sorpresa: { select: { id: true, nombre: true, banderaUrl: true } },
-        balonOro: { select: { id: true, nombre: true, dorsal: true, posicion: true, pais: { select: { id: true, nombre: true, banderaUrl: true } } } },
-        botaOro: { select: { id: true, nombre: true, dorsal: true, posicion: true, pais: { select: { id: true, nombre: true, banderaUrl: true } } } },
-        guanteOro: { select: { id: true, nombre: true, dorsal: true, posicion: true, pais: { select: { id: true, nombre: true, banderaUrl: true } } } },
+        balonOro: { select: { id: true, nombre: true, dorsal: true, posicion: true, fotoUrl: true, pais: { select: { id: true, nombre: true, banderaUrl: true } } } },
+        botaOro: { select: { id: true, nombre: true, dorsal: true, posicion: true, fotoUrl: true, pais: { select: { id: true, nombre: true, banderaUrl: true } } } },
+        guanteOro: { select: { id: true, nombre: true, dorsal: true, posicion: true, fotoUrl: true, pais: { select: { id: true, nombre: true, banderaUrl: true } } } },
       },
     });
 
