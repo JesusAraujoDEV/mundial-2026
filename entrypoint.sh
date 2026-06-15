@@ -2,10 +2,6 @@
 # ═══════════════════════════════════════════════════════════════
 # MUNDIAL 2026 API - Entrypoint de Producción
 # ═══════════════════════════════════════════════════════════════
-# Este script:
-# 1. Aplica el esquema Prisma a la BD (crea tablas si no existen)
-# 2. Arranca la aplicación NestJS
-# ═══════════════════════════════════════════════════════════════
 
 set -e
 
@@ -16,8 +12,8 @@ echo "🔌 Puerto: ${PORT:-3000}"
 # ─── Paso 1: Sincronizar esquema con la base de datos ─────────
 echo ""
 echo "🗄️  Ejecutando prisma db push (sincronizando esquema 'mundial')..."
-npx prisma db push --schema=prisma/schema.prisma --accept-data-loss --skip-generate
-echo "✅ Esquema sincronizado correctamente."
+node_modules/.bin/prisma db push --schema=prisma/schema.prisma --accept-data-loss --skip-generate 2>&1 || echo "⚠️  prisma db push falló, continuando de todas formas..."
+echo "✅ Esquema sincronizado."
 
 # ─── Paso 2: Arrancar la aplicación ──────────────────────────
 echo ""

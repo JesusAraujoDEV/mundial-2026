@@ -4,9 +4,11 @@
 # ═══════════════════════════════════════════════════════════════
 
 # ─── Etapa 1: Dependencias ────────────────────────────────────
-FROM node:20-alpine AS deps
+FROM node:20-slim AS deps
 
 WORKDIR /app
+
+RUN apt-get update -y && apt-get install -y --no-install-recommends openssl && rm -rf /var/lib/apt/lists/*
 
 # Copiar archivos de definición de paquetes
 COPY package.json package-lock.json* ./
@@ -19,7 +21,7 @@ RUN npm ci
 RUN npx prisma generate --schema=prisma/schema.prisma
 
 # ─── Etapa 2: Build ──────────────────────────────────────────
-FROM node:20-alpine AS builder
+FROM node:20-slim AS builder
 
 WORKDIR /app
 
@@ -36,16 +38,16 @@ COPY prisma ./prisma
 RUN npm run build
 
 # ─── Etapa 3: Runner (Producción) ────────────────────────────
-FROM node:20-alpine AS runner
+FROM node:20-slim AS runner
 
 WORKDIR /app
 
-# Instalar solo lo necesario para producción en Alpine
-RUN apk add --no-cache dumb-init
+# Instalar solo lo necesario para producción
+RUN apt-get update -y && apt-get install -y --no-install-recommends dumb-init openssl ca-certificates wget && rm -rf /var/lib/apt/lists/*
 
 # Crear usuario no-root para seguridad
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nestjs -u 1001
+RUN addgroup --gid 1001 --system nodejs && \
+    adduser --system --uid 1001 nestjs
 
 # Copiar package.json para instalar solo deps de producción
 COPY package.json package-lock.json* ./
@@ -65,6 +67,9 @@ COPY --from=builder /app/dist ./dist
 # Copiar el script de inicio
 COPY entrypoint.sh ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
+
+# Dar permisos al usuario nestjs sobre todo /app
+RUN chown -R nestjs:nodejs /app
 
 # Cambiar a usuario no-root
 USER nestjs

@@ -2,12 +2,14 @@ import {
   Injectable,
   UnauthorizedException,
   ConflictException,
+  NotFoundException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from '../prisma/prisma.service';
 import { LoginDto } from './dto/login.dto';
 import { CrearUsuarioDto } from './dto/crear-usuario.dto';
+import { CambiarPasswordDto } from './dto/cambiar-password.dto';
 
 @Injectable()
 export class AuthService {
@@ -99,5 +101,25 @@ export class AuthService {
     });
 
     return { usuario };
+  }
+
+  async cambiarPassword(dto: CambiarPasswordDto) {
+    const usuario = await this.prisma.usuario.findUnique({
+      where: { id: dto.usuarioId },
+    });
+
+    if (!usuario) {
+      throw new NotFoundException('Usuario no encontrado.');
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const nuevoHash = await bcrypt.hash(dto.passwordNueva, salt);
+
+    await this.prisma.usuario.update({
+      where: { id: dto.usuarioId },
+      data: { passwordHash: nuevoHash },
+    });
+
+    return { message: `Contraseña de "${usuario.nombre}" actualizada exitosamente.` };
   }
 }
