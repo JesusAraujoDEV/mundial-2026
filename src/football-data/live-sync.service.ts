@@ -48,7 +48,7 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
       this.logger.log('LIVE_SYNC_ENABLED=false: poller no iniciado.');
       return;
     }
-    const intervalMs = Number(process.env.LIVE_SYNC_INTERVAL_MS ?? 30000);
+    const intervalMs = Number(process.env.LIVE_SYNC_INTERVAL_MS ?? 12000);
     this.logger.log(`Poller de marcadores en vivo cada ${intervalMs}ms.`);
     this.timer = setInterval(() => {
       this.sincronizarEnVivo().catch((e) =>

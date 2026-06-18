@@ -16,6 +16,22 @@ export class NotificacionesService {
   private readonly logger = new Logger(NotificacionesService.name);
   private readonly tz = process.env.TZ_LOCAL ?? 'America/Caracas';
 
+  /**
+   * Organizadores que NO participan en la clasificación de los mensajes de
+   * WhatsApp (resumen, beneficiados, ranking). Configurable por env
+   * NOTIF_EXCLUIR_USERNAMES (separado por comas); por defecto César y Jesús.
+   */
+  private readonly excluidos: string[] = (
+    process.env.NOTIF_EXCLUIR_USERNAMES ?? 'cesaraura,jesuaura'
+  )
+    .split(',')
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
+
+  private esExcluido(username?: string | null): boolean {
+    return !!username && this.excluidos.includes(username.toLowerCase());
+  }
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly whatsapp: WhatsappService,
@@ -48,7 +64,7 @@ export class NotificacionesService {
 
     const [usuarios, pronosticos] = await Promise.all([
       this.prisma.usuario.findMany({
-        where: { rol: 'user' },
+        where: { username: { notIn: this.excluidos } },
         select: { id: true, nombre: true },
         orderBy: { nombre: 'asc' },
       }),
@@ -95,7 +111,7 @@ export class NotificacionesService {
   ): Promise<{ exactos: string[]; tendencia: string[]; sinPuntos: string[] }> {
     const pronosticos = await this.prisma.pronosticoPartido.findMany({
       where: { partidoId },
-      include: { usuario: { select: { nombre: true } } },
+      include: { usuario: { select: { nombre: true, username: true } } },
     });
 
     const signReal = Math.sign(realLocal - realVisitante);
@@ -103,6 +119,7 @@ export class NotificacionesService {
     const tendencia: string[] = [];
     const sinPuntos: string[] = [];
     for (const p of pronosticos) {
+      if (this.esExcluido(p.usuario.username)) continue; // organizadores fuera
       if (
         p.prediccionLocal === realLocal &&
         p.prediccionVisitante === realVisitante
@@ -165,12 +182,16 @@ export class NotificacionesService {
         : payload.tipo === 'autogol'
           ? ' (¡EN PROPIA PUERTA! 🙈)'
           : '';
-    const autor = payload.jugador ? payload.jugador : payload.paisNombre;
 
     const l: string[] = [];
     l.push('⚽🔥 *¡GOOOOOOOOOL!* 🔥⚽');
     l.push('━━━━━━━━━━━━━━━━━━');
-    l.push(`${minutoTxt}¡Anota *${autor}*${tipoTxt} para *${payload.paisNombre}*!`);
+    // Si hay goleador, lo nombramos; si no (API sin detalle), solo el país.
+    if (payload.jugador) {
+      l.push(`${minutoTxt}¡Anota *${payload.jugador}*${tipoTxt} para *${payload.paisNombre}*!`);
+    } else {
+      l.push(`${minutoTxt}¡Gol de *${payload.paisNombre}*${tipoTxt}!`);
+    }
     l.push(
       `📋 *${payload.localNombre} ${realLocal} - ${realVisitante} ${payload.visitanteNombre}*`,
     );
@@ -303,7 +324,7 @@ export class NotificacionesService {
 
     const { exactos, tendencia, sinPuntos } = data.beneficiados;
     const topRanking = await this.prisma.usuario.findMany({
-      where: { rol: 'user' },
+      where: { username: { notIn: this.excluidos } },
       orderBy: { puntosTotales: 'desc' },
       take: 3,
       select: { nombre: true, puntosTotales: true },

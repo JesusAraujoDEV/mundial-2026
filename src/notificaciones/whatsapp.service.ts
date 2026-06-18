@@ -9,6 +9,8 @@ import { Injectable, Logger } from '@nestjs/common';
 @Injectable()
 export class WhatsappService {
   private readonly logger = new Logger(WhatsappService.name);
+  /** Cola para enviar UN mensaje a la vez (evita que Evolution mezcle/falle envíos simultáneos). */
+  private cola: Promise<void> = Promise.resolve();
 
   private get baseUrl(): string {
     return (process.env.EVOLUTION_API_BASE_URL ?? '').replace(/\/+$/, '');
@@ -38,29 +40,35 @@ export class WhatsappService {
       this.logger.warn('Evolution API sin configurar: mensaje omitido.');
       return;
     }
+    // Encolar: cada mensaje espera a que termine el anterior (orden + sin choques).
+    this.cola = this.cola
+      .catch(() => undefined)
+      .then(() => this.enviar(number, texto));
+    return this.cola;
+  }
 
+  private async enviar(number: string, texto: string): Promise<void> {
     const url = `${this.baseUrl}/message/sendText/${this.instance}`;
-    try {
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          apikey: this.apiKey,
-        },
-        body: JSON.stringify({
-          number,
-          text: texto,
-          options: { delay: 1200, presence: 'composing', linkPreview: false },
-        }),
-      });
-      if (!res.ok) {
+    // Payload plano compatible con Evolution API v1 y v2.
+    const payload = { number, text: texto, delay: 800, linkPreview: false };
+    for (let intento = 1; intento <= 2; intento++) {
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', apikey: this.apiKey },
+          body: JSON.stringify(payload),
+        });
+        if (res.ok) return;
         const body = await res.text().catch(() => '');
-        this.logger.warn(`Evolution API respondió ${res.status}: ${body}`);
+        this.logger.warn(
+          `Evolution API respondió ${res.status} (intento ${intento}): ${body.slice(0, 200)}`,
+        );
+      } catch (e) {
+        this.logger.warn(
+          `Error enviando WhatsApp (intento ${intento}): ${(e as Error).message}`,
+        );
       }
-    } catch (e) {
-      this.logger.warn(
-        `Error enviando mensaje WhatsApp: ${(e as Error).message}`,
-      );
+      if (intento < 2) await new Promise((r) => setTimeout(r, 1000));
     }
   }
 }

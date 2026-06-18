@@ -74,7 +74,7 @@ export class FootballDataService {
   async getWcMatches(): Promise<FdMatch[]> {
     const data = await this.get<{ matches: FdMatch[] }>(
       `/competitions/${WC_COMPETITION}/matches`,
-      8000, // 8s: suficiente para reusar entre poller y endpoints
+      10000, // 10s: reusar entre poller (12s) y endpoints sin pasar el límite
     );
     return data.matches ?? [];
   }
