@@ -22,8 +22,6 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
   private readonly logger = new Logger(LiveSyncService.name);
   private timer: NodeJS.Timeout | null = null;
   private running = false;
-  /** Último marcador observado por partido EN ESTE PROCESO (para detectar goles en vivo). */
-  private lastScores = new Map<number, { l: number; v: number }>();
 
   constructor(
     private readonly prisma: PrismaService,
@@ -152,16 +150,16 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
           }
         };
 
-        // Efecto de gol SOLO si: partido EN VIVO + ya teníamos una observación
-        // previa EN ESTE PROCESO (prime) + el marcador subió. Esto evita:
-        //  - overlays de partidos ya finalizados,
-        //  - ráfagas al reiniciar el backend (re-prime, no re-emite).
-        const seen = this.lastScores.get(partido.id);
-        if (estado === 'en_vivo' && seen) {
-          if (newL > seen.l) emitirGoles('local', newL - seen.l, newL, newV);
-          if (newV > seen.v) emitirGoles('visitante', newV - seen.v, newL, newV);
+        // Efecto de gol comparando contra la DB (persistente): si el partido
+        // está EN VIVO y el marcador de la API supera al guardado, emite el
+        // delta. Al comparar contra la DB (no memoria) detecta goles aunque el
+        // backend se reinicie y NO re-emite goles ya guardados (no spamea).
+        const curL = partido.golesLocal ?? 0;
+        const curV = partido.golesVisitante ?? 0;
+        if (estado === 'en_vivo') {
+          if (newL > curL) emitirGoles('local', newL - curL, newL, newV);
+          if (newV > curV) emitirGoles('visitante', newV - curV, newL, newV);
         }
-        this.lastScores.set(partido.id, { l: newL, v: newV });
 
         // Persistir marcador/estado (recalcula puntos/grupos + match:updated) si cambió.
         const scoreChanged =
