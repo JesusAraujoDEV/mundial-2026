@@ -16,22 +16,6 @@ export class NotificacionesService {
   private readonly logger = new Logger(NotificacionesService.name);
   private readonly tz = process.env.TZ_LOCAL ?? 'America/Caracas';
 
-  /**
-   * Organizadores que NO participan en la clasificación de los mensajes de
-   * WhatsApp (resumen, beneficiados, ranking). Configurable por env
-   * NOTIF_EXCLUIR_USERNAMES (separado por comas); por defecto César y Jesús.
-   */
-  private readonly excluidos: string[] = (
-    process.env.NOTIF_EXCLUIR_USERNAMES ?? 'cesaraura,jesuaura'
-  )
-    .split(',')
-    .map((s) => s.trim().toLowerCase())
-    .filter(Boolean);
-
-  private esExcluido(username?: string | null): boolean {
-    return !!username && this.excluidos.includes(username.toLowerCase());
-  }
-
   constructor(
     private readonly prisma: PrismaService,
     private readonly whatsapp: WhatsappService,
@@ -64,7 +48,6 @@ export class NotificacionesService {
 
     const [usuarios, pronosticos] = await Promise.all([
       this.prisma.usuario.findMany({
-        where: { username: { notIn: this.excluidos } },
         select: { id: true, nombre: true },
         orderBy: { nombre: 'asc' },
       }),
@@ -119,7 +102,6 @@ export class NotificacionesService {
     const tendencia: string[] = [];
     const sinPuntos: string[] = [];
     for (const p of pronosticos) {
-      if (this.esExcluido(p.usuario.username)) continue; // organizadores fuera
       if (
         p.prediccionLocal === realLocal &&
         p.prediccionVisitante === realVisitante
@@ -324,7 +306,6 @@ export class NotificacionesService {
 
     const { exactos, tendencia, sinPuntos } = data.beneficiados;
     const topRanking = await this.prisma.usuario.findMany({
-      where: { username: { notIn: this.excluidos } },
       orderBy: { puntosTotales: 'desc' },
       take: 3,
       select: { nombre: true, puntosTotales: true },
