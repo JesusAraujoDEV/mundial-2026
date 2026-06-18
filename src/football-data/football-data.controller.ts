@@ -28,6 +28,17 @@ export class FootballDataController {
     return this.liveSync.sincronizarEscudos();
   }
 
+  @Get('en-vivo')
+  @ApiOperation({
+    summary: 'Detalle del/los partido(s) en vivo (football-data, plan free)',
+    description:
+      'Estado (en vivo/descanso), marcador, marcador de primer tiempo, estadio, árbitro, grupo/jornada y ganador/duración del partido en curso.',
+  })
+  @ApiResponse({ status: 200, description: 'Partidos en curso con su detalle.' })
+  enVivo() {
+    return this.liveSync.obtenerEnVivo();
+  }
+
   @Get('estadisticas/goleadores-fifa')
   @ApiOperation({
     summary: 'Goleadores del Mundial (football-data)',

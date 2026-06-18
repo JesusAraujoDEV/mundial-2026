@@ -7,19 +7,30 @@ export interface FdTeam {
   tla: string;
   crest: string;
 }
+export interface FdReferee {
+  id: number;
+  name: string;
+  type?: string;
+  nationality?: string | null;
+}
 export interface FdMatch {
   id: number;
   status: string;
   stage: string;
   group: string | null;
+  matchday: number | null;
   utcDate: string;
+  lastUpdated?: string;
+  venue?: string | null;
   homeTeam: FdTeam;
   awayTeam: FdTeam;
   score: {
     winner: string | null;
+    duration?: string;
     fullTime: { home: number | null; away: number | null };
     halfTime: { home: number | null; away: number | null };
   };
+  referees?: FdReferee[];
 }
 export interface FdScorer {
   player: { id: number; name: string; nationality: string | null };

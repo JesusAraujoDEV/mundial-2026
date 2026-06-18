@@ -33,11 +33,11 @@ export class ActualizarPartidoDto {
 
   @ApiProperty({
     example: 'en_vivo',
-    description: 'Estado del partido: programado | en_vivo | finalizado',
+    description: 'Estado del partido: programado | en_vivo | descanso | finalizado',
     required: false,
   })
   @IsOptional()
   @IsString()
-  @IsIn(['programado', 'en_vivo', 'finalizado'])
+  @IsIn(['programado', 'en_vivo', 'descanso', 'finalizado'])
   estado?: string;
 }

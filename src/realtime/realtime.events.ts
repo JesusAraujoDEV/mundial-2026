@@ -13,7 +13,11 @@ export const RealtimeEvent = {
   RankingUpdated: 'ranking:updated',
 } as const;
 
-export type EstadoPartido = 'programado' | 'en_vivo' | 'finalizado';
+export type EstadoPartido =
+  | 'programado'
+  | 'en_vivo'
+  | 'descanso'
+  | 'finalizado';
 
 /** Disparado al registrar un gol. Lleva todo lo necesario para animar SIN refetch. */
 export interface MatchGoalPayload {

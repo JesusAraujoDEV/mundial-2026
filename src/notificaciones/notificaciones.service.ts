@@ -198,6 +198,7 @@ export class NotificacionesService {
 
   private fmtMarcadorEstado(estado: string): string {
     if (estado === 'en_vivo') return '🔴 EN VIVO';
+    if (estado === 'descanso') return '⏸️ DESCANSO';
     if (estado === 'finalizado') return '🏁 FINALIZADO';
     return '🕒 PROGRAMADO';
   }

@@ -58,11 +58,14 @@ export const FD_BASE = 'https://api.football-data.org/v4';
 export const WC_COMPETITION = 'WC';
 
 /** Mapea el status de football-data a nuestro estado de partido. */
-export function mapEstado(status: string): 'programado' | 'en_vivo' | 'finalizado' {
+export function mapEstado(
+  status: string,
+): 'programado' | 'en_vivo' | 'descanso' | 'finalizado' {
   switch (status) {
     case 'IN_PLAY':
-    case 'PAUSED':
       return 'en_vivo';
+    case 'PAUSED':
+      return 'descanso'; // medio tiempo / cooling break
     case 'FINISHED':
     case 'AWARDED':
       return 'finalizado';

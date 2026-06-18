@@ -156,7 +156,7 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
         // backend se reinicie y NO re-emite goles ya guardados (no spamea).
         const curL = partido.golesLocal ?? 0;
         const curV = partido.golesVisitante ?? 0;
-        if (estado === 'en_vivo') {
+        if (estado === 'en_vivo' || estado === 'descanso') {
           if (newL > curL) emitirGoles('local', newL - curL, newL, newV);
           if (newV > curV) emitirGoles('visitante', newV - curV, newL, newV);
         }
@@ -184,6 +184,62 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
     } finally {
       this.running = false;
     }
+  }
+
+  /**
+   * Detalle "en vivo" del/los partido(s) en curso con TODO lo que da el plan
+   * free de football-data: estado (en_vivo/descanso), marcador, marcador de
+   * primer tiempo, estadio, árbitro, grupo/jornada, ganador/duración y la marca
+   * de tiempo de la última actualización. Reusa la caché de matches (10s).
+   */
+  async obtenerEnVivo() {
+    const matches = await this.fd.getWcMatches();
+    const paises = await this.mapaPaises();
+    const out: any[] = [];
+    for (const m of matches) {
+      if (!['IN_PLAY', 'PAUSED'].includes(m.status)) continue;
+      if (m.stage !== 'GROUP_STAGE') continue; // knockout = placeholders en DB
+      const localNombre = FD_TEAM_TO_PAIS[m.homeTeam?.id];
+      const visitanteNombre = FD_TEAM_TO_PAIS[m.awayTeam?.id];
+      if (!localNombre || !visitanteNombre) continue;
+      const localP = paises.get(localNombre);
+      const visitanteP = paises.get(visitanteNombre);
+      if (!localP || !visitanteP) continue;
+
+      const partido = await this.prisma.partido.findFirst({
+        where: { localId: localP.id, visitanteId: visitanteP.id, fase: 'grupos' },
+        select: { id: true },
+      });
+
+      const ht = m.score.halfTime;
+      out.push({
+        partidoId: partido?.id ?? null,
+        estado: mapEstado(m.status),
+        grupo: (m.group ?? '').replace('Group ', '') || null,
+        jornada: m.matchday ?? null,
+        golesLocal: m.score.fullTime.home ?? 0,
+        golesVisitante: m.score.fullTime.away ?? 0,
+        primerTiempo:
+          ht.home != null && ht.away != null
+            ? { golesLocal: ht.home, golesVisitante: ht.away }
+            : null,
+        ganador: m.score.winner ?? null,
+        duracion: m.score.duration ?? null,
+        estadio: m.venue ?? null,
+        arbitro:
+          m.referees?.find((r) => r.type === 'REFEREE')?.name ??
+          m.referees?.[0]?.name ??
+          null,
+        actualizado: m.lastUpdated ?? null,
+        local: { id: localP.id, nombre: localNombre, banderaUrl: localP.banderaUrl },
+        visitante: {
+          id: visitanteP.id,
+          nombre: visitanteNombre,
+          banderaUrl: visitanteP.banderaUrl,
+        },
+      });
+    }
+    return out;
   }
 
   /** Sincroniza escudos (crest) desde football-data a paises.bandera_url. */
