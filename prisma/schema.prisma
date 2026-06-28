@@ -115,8 +115,9 @@ model Partido {
   fecha               DateTime
   golesLocal          Int?                @map("goles_local")
   golesVisitante      Int?                @map("goles_visitante")
-  estado              String              @default("programado") @db.VarChar(20) // programado | en_vivo | finalizado
+  estado              String              @default("programado") @db.VarChar(20) // programado | en_vivo | descanso | finalizado
   bloqueado           Boolean             @default(false)
+  definido            Boolean             @default(true) // false en knockout hasta conocerse los equipos reales
   actualizadoPorAdmin Boolean             @default(false) @map("actualizado_por_admin")
   local               Pais                @relation("Local", fields: [localId], references: [id])
   visitante           Pais                @relation("Visitante", fields: [visitanteId], references: [id])

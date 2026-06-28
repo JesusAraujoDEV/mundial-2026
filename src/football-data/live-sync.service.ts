@@ -104,86 +104,234 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
           }
         }
 
-        const estado = mapEstado(m.status);
-        // Sin datos de marcador todavía -> no tocar.
-        if (
-          estado === 'programado' &&
-          m.score.fullTime.home == null &&
-          m.score.fullTime.away == null
-        ) {
-          continue;
-        }
-        const newL = m.score.fullTime.home ?? 0;
-        const newV = m.score.fullTime.away ?? 0;
-
-        const emitirGoles = (
-          equipo: 'local' | 'visitante',
-          delta: number,
-          marcadorL: number,
-          marcadorV: number,
-        ) => {
-          const p = equipo === 'local' ? localP : visitanteP;
-          const nombre = equipo === 'local' ? localNombre : visitanteNombre;
-          for (let i = 0; i < delta; i++) {
-            const golPayload = {
-              partidoId: partido.id,
-              equipo,
-              paisId: p.id,
-              paisNombre: nombre,
-              paisEscudo: p.banderaUrl ?? null,
-              jugador: null, // free tier no da goleador por partido
-              jugadorId: null,
-              minuto: null,
-              tipo: 'normal',
-              golesLocal: marcadorL,
-              golesVisitante: marcadorV,
-              localNombre,
-              visitanteNombre,
-            };
-            this.realtime.emitGoal(golPayload);
-            void this.notif
-              .notificarGol(golPayload)
-              .catch((e) =>
-                this.logger.warn(`Notificación de gol falló: ${e.message}`),
-              );
-            golesEmitidos++;
-          }
-        };
-
-        // Efecto de gol comparando contra la DB (persistente): si el partido
-        // está EN VIVO y el marcador de la API supera al guardado, emite el
-        // delta. Al comparar contra la DB (no memoria) detecta goles aunque el
-        // backend se reinicie y NO re-emite goles ya guardados (no spamea).
-        const curL = partido.golesLocal ?? 0;
-        const curV = partido.golesVisitante ?? 0;
-        if (estado === 'en_vivo' || estado === 'descanso') {
-          if (newL > curL) emitirGoles('local', newL - curL, newL, newV);
-          if (newV > curV) emitirGoles('visitante', newV - curV, newL, newV);
-        }
-
-        // Persistir marcador/estado (recalcula puntos/grupos + match:updated) si cambió.
-        const scoreChanged =
-          newL !== partido.golesLocal || newV !== partido.golesVisitante;
-        const estadoChanged = estado !== partido.estado;
-        if (scoreChanged || estadoChanged) {
-          await this.admin.actualizarPartido(partido.id, {
-            golesLocal: newL,
-            golesVisitante: newV,
-            estado,
-          });
-          partidosActualizados++;
-        }
+        const r = await this.sincronizarMarcador(
+          partido,
+          m,
+          localP,
+          visitanteP,
+          localNombre,
+          visitanteNombre,
+        );
+        golesEmitidos += r.goles;
+        if (r.actualizado) partidosActualizados++;
       }
 
-      if (partidosActualizados > 0 || golesEmitidos > 0 || fechasActualizadas > 0) {
+      // Eliminatorias: mapear equipos reales + marcadores desde football-data.
+      const ko = await this.sincronizarKnockout(matches, paises);
+      golesEmitidos += ko.goles;
+      partidosActualizados += ko.actualizados;
+
+      if (
+        partidosActualizados > 0 ||
+        golesEmitidos > 0 ||
+        fechasActualizadas > 0 ||
+        ko.equiposAsignados > 0
+      ) {
         this.logger.log(
-          `Live-sync: ${partidosActualizados} partidos, ${golesEmitidos} goles, ${fechasActualizadas} fechas.`,
+          `Live-sync: ${partidosActualizados} partidos, ${golesEmitidos} goles, ${fechasActualizadas} fechas, ${ko.equiposAsignados} cruces KO asignados.`,
         );
       }
-      return { partidosActualizados, golesEmitidos, fechasActualizadas };
+      return {
+        partidosActualizados,
+        golesEmitidos,
+        fechasActualizadas,
+        crucesKO: ko.equiposAsignados,
+      };
     } finally {
       this.running = false;
     }
+  }
+
+  /**
+   * Aplica el marcador/estado de un partido de football-data sobre la DB:
+   * emite el efecto de gol (comparando contra la DB, sobrevive reinicios y no
+   * re-emite goles ya guardados) y persiste vía AdminService (recalcula puntos).
+   */
+  private async sincronizarMarcador(
+    partido: { id: number; golesLocal: number | null; golesVisitante: number | null; estado: string },
+    m: { status: string; score: { fullTime: { home: number | null; away: number | null } } },
+    localP: { id: number; banderaUrl: string | null },
+    visitanteP: { id: number; banderaUrl: string | null },
+    localNombre: string,
+    visitanteNombre: string,
+  ): Promise<{ goles: number; actualizado: boolean }> {
+    const estado = mapEstado(m.status);
+    // Sin datos de marcador todavía -> no tocar.
+    if (
+      estado === 'programado' &&
+      m.score.fullTime.home == null &&
+      m.score.fullTime.away == null
+    ) {
+      return { goles: 0, actualizado: false };
+    }
+    const newL = m.score.fullTime.home ?? 0;
+    const newV = m.score.fullTime.away ?? 0;
+    let goles = 0;
+
+    const emitirGoles = (
+      equipo: 'local' | 'visitante',
+      delta: number,
+      marcadorL: number,
+      marcadorV: number,
+    ) => {
+      const p = equipo === 'local' ? localP : visitanteP;
+      const nombre = equipo === 'local' ? localNombre : visitanteNombre;
+      for (let i = 0; i < delta; i++) {
+        const golPayload = {
+          partidoId: partido.id,
+          equipo,
+          paisId: p.id,
+          paisNombre: nombre,
+          paisEscudo: p.banderaUrl ?? null,
+          jugador: null, // free tier no da goleador por partido
+          jugadorId: null,
+          minuto: null,
+          tipo: 'normal',
+          golesLocal: marcadorL,
+          golesVisitante: marcadorV,
+          localNombre,
+          visitanteNombre,
+        };
+        this.realtime.emitGoal(golPayload);
+        void this.notif
+          .notificarGol(golPayload)
+          .catch((e) =>
+            this.logger.warn(`Notificación de gol falló: ${e.message}`),
+          );
+        goles++;
+      }
+    };
+
+    const curL = partido.golesLocal ?? 0;
+    const curV = partido.golesVisitante ?? 0;
+    if (estado === 'en_vivo' || estado === 'descanso') {
+      if (newL > curL) emitirGoles('local', newL - curL, newL, newV);
+      if (newV > curV) emitirGoles('visitante', newV - curV, newL, newV);
+    }
+
+    const scoreChanged =
+      newL !== partido.golesLocal || newV !== partido.golesVisitante;
+    const estadoChanged = estado !== partido.estado;
+    if (scoreChanged || estadoChanged) {
+      await this.admin.actualizarPartido(partido.id, {
+        golesLocal: newL,
+        golesVisitante: newV,
+        estado,
+      });
+      return { goles, actualizado: true };
+    }
+    return { goles, actualizado: false };
+  }
+
+  // football-data stage -> nuestra fase de eliminatoria (mismo número de partidos).
+  private static readonly STAGE_FASE: Record<string, string> = {
+    LAST_32: '16avos',
+    LAST_16: 'octavos',
+    QUARTER_FINALS: 'cuartos',
+    SEMI_FINALS: 'semifinal',
+    THIRD_PLACE: 'tercer_lugar',
+    FINAL: 'final',
+  };
+
+  /**
+   * Sincroniza el cuadro de eliminatorias desde football-data: a medida que
+   * football-data resuelve cada cruce (los siguientes se llenan al avanzar las
+   * rondas), mapea los equipos reales sobre nuestros partidos placeholder y
+   * sincroniza fecha/marcador/estado. El mapeo es por etapa + orden cronológico
+   * (mismo número de partidos por etapa). Si los equipos de un cruce cambian,
+   * borra los pronósticos viejos (eran sobre placeholders / un cruce anterior).
+   */
+  private async sincronizarKnockout(
+    matches: import('./football-data.service').FdMatch[],
+    paises: Map<string, { id: number; banderaUrl: string | null }>,
+  ) {
+    let goles = 0;
+    let actualizados = 0;
+    let equiposAsignados = 0;
+
+    for (const [stage, fase] of Object.entries(LiveSyncService.STAGE_FASE)) {
+      const fdList = matches
+        .filter((m) => m.stage === stage)
+        .sort(
+          (a, b) =>
+            new Date(a.utcDate).getTime() - new Date(b.utcDate).getTime() ||
+            a.id - b.id,
+        );
+      if (fdList.length === 0) continue;
+
+      const dbList = await this.prisma.partido.findMany({
+        where: { fase },
+        orderBy: [{ fecha: 'asc' }, { id: 'asc' }],
+      });
+
+      for (let i = 0; i < dbList.length && i < fdList.length; i++) {
+        const partido = dbList[i];
+        const m = fdList[i];
+
+        // Sincronizar la fecha real (kickoff).
+        if (m.utcDate) {
+          const f = new Date(m.utcDate);
+          if (partido.fecha.getTime() !== f.getTime()) {
+            await this.prisma.partido.update({
+              where: { id: partido.id },
+              data: { fecha: f },
+            });
+          }
+        }
+
+        const localNombre = FD_TEAM_TO_PAIS[m.homeTeam?.id];
+        const visitanteNombre = FD_TEAM_TO_PAIS[m.awayTeam?.id];
+        const localP = localNombre ? paises.get(localNombre) : undefined;
+        const visitanteP = visitanteNombre ? paises.get(visitanteNombre) : undefined;
+
+        if (!localP || !visitanteP) {
+          // Aún sin definir (TBD en football-data) -> mantener placeholder.
+          if (partido.definido) {
+            await this.prisma.partido.update({
+              where: { id: partido.id },
+              data: { definido: false },
+            });
+          }
+          continue;
+        }
+
+        // Asignar equipos reales cuando se conocen o cambian.
+        const teamsChanged =
+          partido.localId !== localP.id || partido.visitanteId !== visitanteP.id;
+        if (teamsChanged || !partido.definido) {
+          await this.prisma.partido.update({
+            where: { id: partido.id },
+            data: { localId: localP.id, visitanteId: visitanteP.id, definido: true },
+          });
+          equiposAsignados++;
+          if (teamsChanged) {
+            // Pronósticos previos eran sobre los equipos viejos (placeholder o
+            // un cruce anterior): ya no aplican.
+            await this.prisma.pronosticoPartido.deleteMany({
+              where: { partidoId: partido.id },
+            });
+          }
+        }
+
+        const r = await this.sincronizarMarcador(
+          {
+            id: partido.id,
+            golesLocal: partido.golesLocal,
+            golesVisitante: partido.golesVisitante,
+            estado: partido.estado,
+          },
+          m,
+          localP,
+          visitanteP,
+          localNombre!,
+          visitanteNombre!,
+        );
+        goles += r.goles;
+        if (r.actualizado) actualizados++;
+      }
+    }
+
+    return { goles, actualizados, equiposAsignados };
   }
 
   /**

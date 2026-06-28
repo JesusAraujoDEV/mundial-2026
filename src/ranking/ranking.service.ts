@@ -45,6 +45,7 @@ export class RankingService {
       fecha: partido.fecha,
       bloqueado: partido.bloqueado,
       estado: partido.estado,
+      definido: partido.definido,
       local: partido.local,
       visitante: partido.visitante,
       resultadoReal:

@@ -105,12 +105,6 @@ export class GruposService {
 
     const crucesAsignados = this.asignarTercerosACruces(tercerosClasificados);
 
-    const dieciseisavos = this.generarDieciseisavos(
-      posiciones,
-      tercerosMap,
-      crucesAsignados,
-    );
-
     const partidos = await this.prisma.partido.findMany({
       where: {
         fase: { in: ['16avos', 'octavos', 'cuartos', 'semifinal', 'tercer_lugar', 'final'] },
@@ -122,7 +116,10 @@ export class GruposService {
       orderBy: { fecha: 'asc' },
     });
 
-    const octavos = partidos.filter((p) => p.fase === '16avos' || p.fase === 'octavos');
+    // El cuadro se construye desde los partidos reales en DB (live-sync mapea
+    // los equipos desde football-data a medida que se resuelven las rondas).
+    const dieciseisavos = partidos.filter((p) => p.fase === '16avos');
+    const octavos = partidos.filter((p) => p.fase === 'octavos');
     const cuartos = partidos.filter((p) => p.fase === 'cuartos');
     const semifinales = partidos.filter((p) => p.fase === 'semifinal');
     const tercerLugar = partidos.find((p) => p.fase === 'tercer_lugar') ?? null;
@@ -130,7 +127,7 @@ export class GruposService {
 
     return {
       estructura: {
-        dieciseisavos: dieciseisavos,
+        dieciseisavos: dieciseisavos.map((p) => this.formatearPartidoPlayoff(p)),
         octavosReales: octavos.map((p) => this.formatearPartidoPlayoff(p)),
         cuartos: cuartos.map((p) => this.formatearPartidoPlayoff(p)),
         semifinales: semifinales.map((p) => this.formatearPartidoPlayoff(p)),
@@ -210,20 +207,38 @@ export class GruposService {
     return resultado;
   }
 
+  private static readonly FASE_DESC: Record<string, string> = {
+    '16avos': 'Dieciseisavos de final',
+    octavos: 'Octavos de final',
+    cuartos: 'Cuartos de final',
+    semifinal: 'Semifinal',
+    tercer_lugar: 'Tercer puesto',
+    final: 'Final',
+  };
+
   private formatearPartidoPlayoff(partido: any) {
-    // Los cruces de octavos en adelante dependen de quién gane las rondas
-    // previas: hasta que no estén definidos, se muestran como "Por definir"
-    // (los partidos en DB son placeholders de la siembra, no equipos reales).
+    // Mostrar equipos reales solo cuando el cruce está definido (live-sync los
+    // asigna desde football-data al resolverse la ronda previa). Mientras tanto,
+    // "Por definir".
+    const definido = partido.definido;
+    const local = definido ? partido.local : null;
+    const visitante = definido ? partido.visitante : null;
+    let ganador: typeof partido.local | null = null;
+    if (definido && partido.golesLocal !== null && partido.golesVisitante !== null) {
+      if (partido.golesLocal > partido.golesVisitante) ganador = partido.local;
+      else if (partido.golesVisitante > partido.golesLocal) ganador = partido.visitante;
+      // Empate (se decidiría por penales): el plan free no expone el ganador.
+    }
     return {
-      partidoId: partido.id,
+      id: partido.id,
+      descripcion: GruposService.FASE_DESC[partido.fase] ?? partido.fase,
       fase: partido.fase,
       fecha: partido.fecha,
-      local: null,
-      visitante: null,
-      resultado:
-        partido.golesLocal !== null && partido.golesVisitante !== null
-          ? { golesLocal: partido.golesLocal, golesVisitante: partido.golesVisitante }
-          : null,
+      local,
+      visitante,
+      golesLocal: partido.golesLocal,
+      golesVisitante: partido.golesVisitante,
+      ganador,
     };
   }
 
