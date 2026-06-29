@@ -40,4 +40,15 @@ export class ActualizarPartidoDto {
   @IsString()
   @IsIn(['programado', 'en_vivo', 'descanso', 'finalizado'])
   estado?: string;
+
+  @ApiProperty({
+    example: 7,
+    description:
+      'ID del país que clasificó por penales (knockout con empate). null si no hubo penales.',
+    required: false,
+    nullable: true,
+  })
+  @IsOptional()
+  @IsInt()
+  ganadorPenalesId?: number | null;
 }

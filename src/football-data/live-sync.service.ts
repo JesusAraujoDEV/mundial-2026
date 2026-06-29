@@ -149,7 +149,14 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
    */
   private async sincronizarMarcador(
     partido: { id: number; golesLocal: number | null; golesVisitante: number | null; estado: string },
-    m: { status: string; score: { fullTime: { home: number | null; away: number | null } } },
+    m: {
+      status: string;
+      score: {
+        winner?: string | null;
+        duration?: string;
+        fullTime: { home: number | null; away: number | null };
+      };
+    },
     localP: { id: number; banderaUrl: string | null },
     visitanteP: { id: number; banderaUrl: string | null },
     localNombre: string,
@@ -209,6 +216,15 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
       if (newV > curV) emitirGoles('visitante', newV - curV, newL, newV);
     }
 
+    // Ganador por penales (knockout decidido en la tanda): football-data marca
+    // duration=PENALTY_SHOOTOUT y winner=HOME/AWAY_TEAM. null en cualquier otro caso.
+    const ganadorPenalesId =
+      m.score.duration === 'PENALTY_SHOOTOUT' && m.score.winner === 'HOME_TEAM'
+        ? localP.id
+        : m.score.duration === 'PENALTY_SHOOTOUT' && m.score.winner === 'AWAY_TEAM'
+          ? visitanteP.id
+          : null;
+
     const scoreChanged =
       newL !== partido.golesLocal || newV !== partido.golesVisitante;
     const estadoChanged = estado !== partido.estado;
@@ -217,6 +233,7 @@ export class LiveSyncService implements OnModuleInit, OnModuleDestroy {
         golesLocal: newL,
         golesVisitante: newV,
         estado,
+        ganadorPenalesId,
       });
       return { goles, actualizado: true };
     }

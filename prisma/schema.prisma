@@ -118,6 +118,7 @@ model Partido {
   estado              String              @default("programado") @db.VarChar(20) // programado | en_vivo | descanso | finalizado
   bloqueado           Boolean             @default(false)
   definido            Boolean             @default(true) // false en knockout hasta conocerse los equipos reales
+  ganadorPenalesId    Int?                @map("ganador_penales_id") // país que clasificó por penales (knockout)
   actualizadoPorAdmin Boolean             @default(false) @map("actualizado_por_admin")
   local               Pais                @relation("Local", fields: [localId], references: [id])
   visitante           Pais                @relation("Visitante", fields: [visitanteId], references: [id])
@@ -135,6 +136,7 @@ model PronosticoPartido {
   partidoId           Int      @map("partido_id")
   prediccionLocal     Int      @map("prediccion_local")
   prediccionVisitante Int      @map("prediccion_visitante")
+  ganadorPenalesId    Int?     @map("ganador_penales_id") // pick del usuario: quién clasifica si hay empate (knockout)
   puntosGanados       Int      @default(0) @map("puntos_ganados")
   createdAt           DateTime @default(now()) @map("created_at")
   usuario             Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)

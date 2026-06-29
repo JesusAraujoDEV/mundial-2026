@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsInt, Min } from 'class-validator';
+import { IsInt, IsOptional, Min } from 'class-validator';
 
 export class CrearPronosticoDto {
   @ApiProperty({
@@ -17,4 +17,15 @@ export class CrearPronosticoDto {
   @IsInt()
   @Min(0)
   prediccionVisitante: number;
+
+  @ApiProperty({
+    example: 7,
+    description:
+      'Solo knockout con empate: ID del país que el usuario cree que clasifica por penales.',
+    required: false,
+    nullable: true,
+  })
+  @IsOptional()
+  @IsInt()
+  ganadorPenalesId?: number | null;
 }

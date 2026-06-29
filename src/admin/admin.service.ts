@@ -96,6 +96,9 @@ export class AdminService {
         }),
         ...(dto.bloqueado !== undefined && { bloqueado: dto.bloqueado }),
         ...(estado !== undefined && { estado }),
+        ...(dto.ganadorPenalesId !== undefined && {
+          ganadorPenalesId: dto.ganadorPenalesId,
+        }),
         ...(actualizarMarcador && { actualizadoPorAdmin: true }),
       },
     });
@@ -614,6 +617,15 @@ export class AdminService {
     golesVisitanteReal: number,
   ) {
     try {
+      // La fase determina el multiplicador de puntos; el ganador real por
+      // penales (si lo hubo) habilita el bonus de "quién clasifica".
+      const partido = await this.prisma.partido.findUnique({
+        where: { id: partidoId },
+        select: { fase: true, ganadorPenalesId: true },
+      });
+      const fase = partido?.fase ?? 'grupos';
+      const ganadorPenalesReal = partido?.ganadorPenalesId ?? null;
+
       await this.prisma.$transaction(async (tx) => {
         const pronosticos = await tx.pronosticoPartido.findMany({
           where: { partidoId },
@@ -625,6 +637,9 @@ export class AdminService {
             pronostico.prediccionVisitante,
             golesLocalReal,
             golesVisitanteReal,
+            fase,
+            pronostico.ganadorPenalesId,
+            ganadorPenalesReal,
           );
 
           await tx.pronosticoPartido.update({
@@ -657,23 +672,55 @@ export class AdminService {
     }
   }
 
+  /**
+   * Puntos por fase: cada ronda de eliminatorias vale progresivamente más.
+   * exacto = marcador clavado; acierto = acertar el resultado (1/X/2).
+   * El bonus de penales (acertar quién clasifica en un empate que va a penales)
+   * vale lo mismo que el "acierto" de esa ronda.
+   */
+  static readonly FASE_PUNTOS: Record<string, { exacto: number; acierto: number }> = {
+    grupos: { exacto: 5, acierto: 3 },
+    '16avos': { exacto: 10, acierto: 6 },
+    octavos: { exacto: 15, acierto: 9 },
+    cuartos: { exacto: 20, acierto: 12 },
+    semifinal: { exacto: 25, acierto: 15 },
+    tercer_lugar: { exacto: 25, acierto: 15 },
+    final: { exacto: 30, acierto: 18 },
+  };
+
   private calcularPuntos(
     predLocal: number,
     predVisitante: number,
     realLocal: number,
     realVisitante: number,
+    fase = 'grupos',
+    predGanadorPenales: number | null = null,
+    realGanadorPenales: number | null = null,
   ): number {
+    const tabla =
+      AdminService.FASE_PUNTOS[fase] ?? AdminService.FASE_PUNTOS.grupos;
+
+    let puntos = 0;
     if (predLocal === realLocal && predVisitante === realVisitante) {
-      return 5;
+      puntos = tabla.exacto;
+    } else if (
+      Math.sign(predLocal - predVisitante) ===
+      Math.sign(realLocal - realVisitante)
+    ) {
+      puntos = tabla.acierto;
     }
 
-    const resultadoPred = Math.sign(predLocal - predVisitante);
-    const resultadoReal = Math.sign(realLocal - realVisitante);
-
-    if (resultadoPred === resultadoReal) {
-      return 3;
+    // Bonus de penales: el partido se definió por penales (hay ganador real),
+    // el usuario predijo empate y acertó quién clasifica.
+    if (
+      realGanadorPenales != null &&
+      predLocal === predVisitante &&
+      predGanadorPenales != null &&
+      predGanadorPenales === realGanadorPenales
+    ) {
+      puntos += tabla.acierto;
     }
 
-    return 0;
+    return puntos;
   }
 }

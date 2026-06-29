@@ -35,6 +35,18 @@ export class PronosticosService {
       );
     }
 
+    // El pick de penales solo aplica en knockout, cuando el pronóstico es empate
+    // y el equipo elegido es uno de los dos del partido. Si no, se guarda null.
+    const esEmpate = dto.prediccionLocal === dto.prediccionVisitante;
+    const esKnockout = partido.fase !== 'grupos';
+    const ganadorPenalesId =
+      esEmpate &&
+      esKnockout &&
+      (dto.ganadorPenalesId === partido.localId ||
+        dto.ganadorPenalesId === partido.visitanteId)
+        ? dto.ganadorPenalesId
+        : null;
+
     const pronostico = await this.prisma.pronosticoPartido.upsert({
       where: {
         usuarioId_partidoId: {
@@ -45,12 +57,14 @@ export class PronosticosService {
       update: {
         prediccionLocal: dto.prediccionLocal,
         prediccionVisitante: dto.prediccionVisitante,
+        ganadorPenalesId,
       },
       create: {
         usuarioId,
         partidoId,
         prediccionLocal: dto.prediccionLocal,
         prediccionVisitante: dto.prediccionVisitante,
+        ganadorPenalesId,
       },
     });
 

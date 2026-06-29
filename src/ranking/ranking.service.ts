@@ -46,6 +46,7 @@ export class RankingService {
       bloqueado: partido.bloqueado,
       estado: partido.estado,
       definido: partido.definido,
+      ganadorPenalesId: partido.ganadorPenalesId,
       local: partido.local,
       visitante: partido.visitante,
       resultadoReal:
@@ -57,6 +58,7 @@ export class RankingService {
         nombreUsuario: p.usuario.nombre,
         prediccionLocal: p.prediccionLocal,
         prediccionVisitante: p.prediccionVisitante,
+        ganadorPenalesId: p.ganadorPenalesId,
         puntosGanados: p.puntosGanados,
       })),
     }));
