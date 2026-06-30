@@ -700,6 +700,24 @@ export class AdminService {
     const tabla =
       AdminService.FASE_PUNTOS[fase] ?? AdminService.FASE_PUNTOS.grupos;
 
+    // Knockout decidido por penales y el usuario predijo empate: acertar el
+    // empate ya garantiza AL MENOS la mitad de los puntos (aunque falle o no
+    // elija quién clasifica). Si además acierta el clasificado, gana el puntaje
+    // completo + bonus.
+    if (
+      realGanadorPenales != null &&
+      realLocal === realVisitante &&
+      predLocal === predVisitante
+    ) {
+      const base =
+        predLocal === realLocal && predVisitante === realVisitante
+          ? tabla.exacto
+          : tabla.acierto;
+      const aciertaClasificado =
+        predGanadorPenales != null && predGanadorPenales === realGanadorPenales;
+      return aciertaClasificado ? base + tabla.acierto : Math.ceil(base / 2);
+    }
+
     let puntos = 0;
     if (predLocal === realLocal && predVisitante === realVisitante) {
       puntos = tabla.exacto;
@@ -708,17 +726,6 @@ export class AdminService {
       Math.sign(realLocal - realVisitante)
     ) {
       puntos = tabla.acierto;
-    }
-
-    // Bonus de penales: el partido se definió por penales (hay ganador real),
-    // el usuario predijo empate y acertó quién clasifica.
-    if (
-      realGanadorPenales != null &&
-      predLocal === predVisitante &&
-      predGanadorPenales != null &&
-      predGanadorPenales === realGanadorPenales
-    ) {
-      puntos += tabla.acierto;
     }
 
     return puntos;
